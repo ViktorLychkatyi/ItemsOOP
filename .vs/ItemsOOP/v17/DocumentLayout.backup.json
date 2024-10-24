@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 234,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ItemsOOP.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp",
+              "RelativeDocumentMoniker": "ItemsOOP.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp",
+              "RelativeToolTip": "ItemsOOP.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-10-24T11:35:21.689Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
