@@ -3,51 +3,51 @@ using namespace std;
 #include "Banknote.h"
 
 void Banknote::SetDenomination(string d) {
-	denomination = d;
+	this->denomination = d;
 }
 
 string Banknote::GetDenomination(string b) {
-	return denomination;
+	return this->denomination;
 }
 
 void Banknote::SetCurrency(string c) {
-	currency = c;
+	this->currency = c;
 }
 
 string Banknote::GetCurrency(string c) {
-	return c;
+	return this->currency;
 }
 
 void Banknote::SetSerialNumber(string s) {
-	serial_number = s;
+	this->serial_number = s;
 }
 
 string Banknote::GetSerialNumber(string s) {
-	return serial_number;
+	return this->serial_number;
 }
 
 void Banknote::SetCountry(string c) {
-	country = c;
+	this->country = c;
 }
 
 string Banknote::GetCountry(string c) {
-	return country;
+	return this->country;
 }
 
 void Banknote::SetState(string s) {
-	state = s;
+	this->state = s;
 }
 
 string Banknote::GetState(string s) {
-	return state;
+	return this->state;
 }
 
 void Banknote::PrintBanknote() {
-	cout << denomination << "\n";
-	cout << currency << "\n";
-	cout << serial_number << "\n";
-	cout << country << "\n";
-	cout << state << "\n";
+	cout << this->denomination << "\n";
+	cout << this->currency << "\n";
+	cout << this->serial_number << "\n";
+	cout << this->country << "\n";
+	cout << this->state << "\n";
 	cout << "\n";
 }
 

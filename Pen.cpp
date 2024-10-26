@@ -3,51 +3,51 @@ using namespace std;
 #include "Pen.h"
 
 void Pen::SetInkColor(string i) {
-	ink_color = i;
+	this->ink_color = i;
 }
 
 string Pen::GetInkColor(string i) {
-	return ink_color;
+	return this->ink_color;
 }
 
 void Pen::SetPenThickness(string t) {
-	pen_thickness = t;
+	this->pen_thickness = t;
 }
 
 string Pen::GetPenThickness(string t) {
-	return pen_thickness;
+	return this->pen_thickness;
 }
 
 void Pen::SetPenLength(string l) {
-	pen_length = l;
+	this->pen_length = l;
 }
 
 string Pen::GetPenLength(string l) {
-	return pen_length;
+	return this->pen_length;
 }
 
 void Pen::SetBodyMaterial(string m) {
-	body_material = m;
+	this->body_material = m;
 }
 
 string Pen::GetBodyMaterial(string m) {
-	return body_material;
+	return this->body_material;
 }
 
 void Pen::SetInkAmount(string a) {
-	ink_amount = a;
+	this->ink_amount = a;
 }
 
 string Pen::GetInkAmount(string a) {
-	return ink_amount;
+	return this->ink_amount;
 }
 
 void Pen::PrintPen() {
-	cout << ink_color << "\n";
-	cout << pen_thickness << "\n";
-	cout << pen_length << "\n";
-	cout << body_material << "\n";
-	cout << ink_amount << "\n";
+	cout << this->ink_color << "\n";
+	cout << this->pen_thickness << "\n";
+	cout << this->pen_length << "\n";
+	cout << this->body_material << "\n";
+	cout << this->ink_amount << "\n";
 	cout << "\n";
 }
 

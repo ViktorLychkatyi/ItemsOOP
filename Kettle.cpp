@@ -3,51 +3,51 @@ using namespace std;
 #include "Kettle.h"
 
 void Kettle::SetCapacity(string c) {
-	ñapacity = c;
+	this->ñapacity = c;
 }
 
 string Kettle::GetCapacity(string c) {
-	return ñapacity;
+	return this->ñapacity;
 }
 
 void Kettle::SetPower(string p) {
-	power = p;
+	this->power = p;
 }
 
 string Kettle::GetPower(string p) {
-	return power;
+	return this->power;
 }
 
 void Kettle::SetBodyMaterial(string m) {
-	body_material = m;
+	this->body_material = m;
 }
 
 string Kettle::GetBodyMaterial(string m) {
-	return body_material;
+	return this->body_material;
 }
 
 void Kettle::SetColor(string c) {
-	color = c;
+	this->color = c;
 }
 
 string Kettle::GetColor(string c) {
-	return color;
+	return this->color;
 }
 
 void Kettle::SetWaterTemperature(string t) {
-	water_temperature = t;
+	this->water_temperature = t;
 }
 
 string Kettle::GetWaterTemperature(string t) {
-	return water_temperature;
+	return this->water_temperature;
 }
 
 void Kettle::PrintKettle() {
-	cout << ñapacity << "\n";
-	cout << power << "\n";
-	cout << body_material << "\n";
-	cout << color << "\n";
-	cout << water_temperature << "\n";
+	cout << this->ñapacity << "\n";
+	cout << this->power << "\n";
+	cout << this->body_material << "\n";
+	cout << this->color << "\n";
+	cout << this->water_temperature << "\n";
 	cout << "\n";
 }
 

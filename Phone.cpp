@@ -3,60 +3,60 @@ using namespace std;
 #include "Phone.h"
 
 void Phone::SetBrand(string b) {
-	brand = b;
+	this->brand = b;
 }
 
 string Phone::GetBrand(string b) {
-	return brand;
+	return this->brand;
 }
 
 void Phone::SetModel(string m) {
-	model = m;
+	this->model = m;
 }
 
 string Phone::GetModel(string m) {
-	return m;
+	return this->model;
 }
 
 void Phone::SetMemorySize(string s) {
-	memory_size = s;
+	this->memory_size = s;
 }
 
 string Phone::GetMemorySize(string s) {
-	return memory_size;
+	return this->memory_size;
 }
 
 void Phone::SetColor(string c) {
-	color = c;
+	this->color = c;
 }
 
 string Phone::GetColor(string c) {
-	return color;
+	return this->color;
 }
 
 void Phone::SetOperatingSystem(string o) {
-	operating_system = o;
+	this->operating_system = o;
 }
 
 string Phone::GetOperatingSystem(string o) {
-	return operating_system;
+	return this->operating_system;
 }
 
 void Phone::SetProcessor(string p) {
-	proccesor = p;
+	this->proccesor = p;
 }
 
 string Phone::GetProcessor(string p) {
-	return proccesor;
+	return this->proccesor;
 }
 
 void Phone::PrintPhone() {
-	cout << brand << "\n";
-	cout << model << "\n";
-	cout << memory_size << "\n";
-	cout << color << "\n";
-	cout << operating_system << "\n";
-	cout << proccesor << "\n";
+	cout << this->brand << "\n";
+	cout << this->model << "\n";
+	cout << this->memory_size << "\n";
+	cout << this->color << "\n";
+	cout << this->operating_system << "\n";
+	cout << this->proccesor << "\n";
 	cout << "\n";
 }
 
