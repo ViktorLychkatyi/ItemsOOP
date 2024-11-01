@@ -6,6 +6,7 @@ using namespace std;
 #include "Kettle.h"
 #include "Pen.h"
 #include "Book.h"
+// Проект
 
 // вызовы
 int main() {

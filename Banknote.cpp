@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Banknote.h"
+// Êóïşğà
 
 void Banknote::SetDenomination(string d) {
 	denomination = d;

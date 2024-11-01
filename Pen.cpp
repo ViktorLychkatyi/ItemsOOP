@@ -2,6 +2,7 @@
 #include <windows.h>
 using namespace std;
 #include "Pen.h"
+// Ручка
 
 void Pen::SetInkColor(string i) {
 	ink_color = i;

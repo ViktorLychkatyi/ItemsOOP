@@ -2,6 +2,7 @@
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
+// Телефон
 
 void Phone::SetBrand(string b) {
 	brand = b;

@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Book.h"
+// Книга
 
 void Book::SetTitle(string t) {
 	title = t;
