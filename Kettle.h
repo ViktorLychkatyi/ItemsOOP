@@ -3,7 +3,7 @@ using namespace std;
 
 class Kettle {
 private:
-	double сapacity;
+	double capacity;
 	double power;
 	string body_material;
 	string color;
