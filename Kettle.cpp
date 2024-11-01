@@ -5,7 +5,7 @@ using namespace std;
 
 void Kettle::SetCapacity(double c) {
 	if (c >= 0.5 && c <= 2.5) {
-		сapacity = c;
+		this->capacity = c;
 	}
 	else {
 		throw "Неверное значеине";
@@ -13,12 +13,12 @@ void Kettle::SetCapacity(double c) {
 }
 
 double Kettle::GetCapacity() const {
-	return сapacity;
+	return this->capacity;
 }
 
 void Kettle::SetPower(double p) {
 	if (p >= 500 && p <= 3000) {
-		power = p;
+		this->power = p;
 	}
 	else {
 		throw "Неверное значеине";
@@ -26,28 +26,28 @@ void Kettle::SetPower(double p) {
 }
 
 double Kettle::GetPower() const {
-	return power;
+	return this->power;
 }
 
 void Kettle::SetBodyMaterial(string m) {
-	body_material = m;
+	this->body_material = m;
 }
 
 string Kettle::GetBodyMaterial() const {
-	return body_material;
+	return this->body_material;
 }
 
 void Kettle::SetColor(string c) {
-	color = c;
+	this->color = c;
 }
 
 string Kettle::GetColor() const {
-	return color;
+	return this->color;
 }
 
 void Kettle::SetWaterTemperature(double t) {
 	if (t >= 40 && t <= 100) {
-		water_temperature = t;
+		this->water_temperature = t;
 	}
 	else {
 		throw "Неверное значеине";
@@ -55,15 +55,15 @@ void Kettle::SetWaterTemperature(double t) {
 }
 
 double Kettle::GetWaterTemperature() const {
-	return water_temperature;
+	return this->water_temperature;
 }
 
 void Kettle::PrintKettle() {
-	cout << сapacity << "\n";
-	cout << power << "\n";
-	cout << body_material << "\n";
-	cout << color << "\n";
-	cout << water_temperature << "\n";
+	cout << this->capacity << "\n";
+	cout << this->power << "\n";
+	cout << this->body_material << "\n";
+	cout << this->color << "\n";
+	cout << this->water_temperature << "\n";
 	cout << "\n";
 }
 

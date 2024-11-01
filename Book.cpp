@@ -3,51 +3,51 @@ using namespace std;
 #include "Book.h"
 
 void Book::SetTitle(string t) {
-	title = t;
+    this->title = t;
 }
 
 string Book::GetTitle() const {
-	return title;
+	return this->title;
 }
 
 void Book::SetAuthor(string a) {
-	author = a;
+    this->author = a;
 }
 
 string Book::GetAuthor() const {
-	return author;
+	return this->author;
 }
 
 void Book::SetNumberPages(int n) {
-	number_pages = n;
+    this->number_pages = n;
 }
 
 int Book::GetNumberPages() const {
-	return number_pages;
+	return this->number_pages;
 }
 
 void Book::SetGenre(string g) {
-	genre = g;
+    this->genre = g;
 }
 
 string Book::GetGenre() const {
-	return genre;
+	return this->genre;
 }
 
 void Book::SetYearPublication(int y) {
-	year_publication = y;
+    this->year_publication = y;
 }
 
 int Book::GetYearPublication() const {
-	return year_publication;
+	return this->year_publication;
 }
 
 void Book::PrintBook() {
-	cout << title << "\n";
-	cout << author << "\n";
-	cout << number_pages << "\n";
-	cout << genre << "\n";
-	cout << year_publication << "\n";
+	cout << this->title << "\n";
+	cout << this->author << "\n";
+	cout << this->number_pages << "\n";
+	cout << this->genre << "\n";
+	cout << this->year_publication << "\n";
 	cout << "\n";
 }
 

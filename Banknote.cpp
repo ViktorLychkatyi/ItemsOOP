@@ -3,19 +3,19 @@ using namespace std;
 #include "Banknote.h"
 
 void Banknote::SetDenomination(string d) {
-	denomination = d;
+	this->denomination = d;
 }
 
 string Banknote::GetDenomination() const {
-	return denomination;
+	return this->denomination;
 }
 
 void Banknote::SetNubmer(int n) {
-	number = n;
+	this->number = n;
 }
 
 int Banknote::GetNumber() const {
-	return number;
+	return this->number;
 }
 
 void Banknote::SetCurrency(string c) {
@@ -29,7 +29,7 @@ void Banknote::SetCurrency(string c) {
 		if (number == 100);
 		if (number == 200);
 		if (number == 500);
-		currency = c;
+		this->currency = c;
 	}
 	else {
 		throw "Неверное значение";
@@ -40,28 +40,28 @@ void Banknote::SetCurrency(string c) {
 }
 
 string Banknote::GetCurrency() const {
-	return currency;
+	return this->currency;
 }
 
 void Banknote::SetSerialNumber(string s) {
-	serial_number = s;
+	this->serial_number = s;
 }
 
 string Banknote::GetSerialNumber() const {
-	return serial_number;
+	return this->serial_number;
 }
 
 void Banknote::SetCountry(string c) {
-	country = c;
+	this->country = c;
 }
 
 string Banknote::GetCountry() const {
-	return country;
+	return this->country;
 }
 
 void Banknote::SetState(string s) {
 	if (state == "New" || "Новое") {
-		state = s;
+		this->state = s;
 	}
 	else {
 		throw "Неверное действие";
@@ -69,15 +69,15 @@ void Banknote::SetState(string s) {
 }
 
 string Banknote::GetState() const {
-	return state;
+	return this->state;
 }
 
 void Banknote::PrintBanknote() {
-	cout << denomination << "\n";
-	cout << currency << "\n";
-	cout << serial_number << "\n";
-	cout << country << "\n";
-	cout << state << "\n";
+	cout << this->denomination << "\n";
+	cout << this->currency << "\n";
+	cout << this->serial_number << "\n";
+	cout << this->country << "\n";
+	cout << this->state << "\n";
 	cout << "\n";
 }
 
