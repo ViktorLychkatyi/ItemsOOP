@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 
-// Телефон
 class Phone {
 private:
 	string brand;

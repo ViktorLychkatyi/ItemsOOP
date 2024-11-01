@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Геливая ручка
 class Pen {
 private:
 	string ink_color;

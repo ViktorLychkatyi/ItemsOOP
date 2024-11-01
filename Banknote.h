@@ -1,9 +1,7 @@
 #include <iostream>
 #include <windows.h>
 using namespace std;
-// Купюра
 
-// Купюра
 class Banknote {
 private:
 	string denomination;

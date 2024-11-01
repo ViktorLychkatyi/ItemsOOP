@@ -3,12 +3,48 @@
   "WorkspaceRootPath": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Phone.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Pen.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Kettle.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Book.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Banknote.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Phone.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Pen.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Kettle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Book.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,25 +59,133 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Banknote.cpp",
-              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
-              "RelativeDocumentMoniker": "Banknote.cpp",
-              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
-              "RelativeToolTip": "Banknote.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-01T17:54:06.973Z",
+              "Title": "Phone.h",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.h",
+              "RelativeDocumentMoniker": "Phone.h",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.h",
+              "RelativeToolTip": "Phone.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-01T18:03:30.227Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Pen.h",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.h",
+              "RelativeDocumentMoniker": "Pen.h",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.h",
+              "RelativeToolTip": "Pen.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-01T18:03:23.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Kettle.h",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.h",
+              "RelativeDocumentMoniker": "Kettle.h",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.h",
+              "RelativeToolTip": "Kettle.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-01T18:03:11.405Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Book.h",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.h",
+              "RelativeDocumentMoniker": "Book.h",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.h",
+              "RelativeToolTip": "Book.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-01T18:02:59.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Banknote.h",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.h",
+              "RelativeDocumentMoniker": "Banknote.h",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.h",
+              "RelativeToolTip": "Banknote.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-11-01T18:02:54.228Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Phone.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.cpp",
+              "RelativeDocumentMoniker": "Phone.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.cpp",
+              "RelativeToolTip": "Phone.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-01T18:02:47.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Pen.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.cpp",
+              "RelativeDocumentMoniker": "Pen.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Pen.cpp",
+              "RelativeToolTip": "Pen.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-01T18:02:42.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Kettle.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.cpp",
+              "RelativeDocumentMoniker": "Kettle.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.cpp",
+              "RelativeToolTip": "Kettle.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-01T18:02:36.724Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Book.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.cpp",
+              "RelativeDocumentMoniker": "Book.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.cpp",
+              "RelativeToolTip": "Book.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-01T18:02:20.035Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Banknote.cpp",
+              "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
+              "RelativeDocumentMoniker": "Banknote.cpp",
+              "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
+              "RelativeToolTip": "Banknote.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-11-01T17:54:06.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "ItemsOOP.cpp",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp",
               "RelativeDocumentMoniker": "ItemsOOP.cpp",
               "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp",
               "RelativeToolTip": "ItemsOOP.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-01T14:00:26.524Z"
             }

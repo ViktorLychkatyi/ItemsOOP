@@ -1,10 +1,9 @@
 #include <iostream>
 using namespace std;
 
-// İëåêòğî÷àéíèê
 class Kettle {
 private:
-	double ñapacity;
+	double Ñapacity;
 	double power;
 	string body_material;
 	string color;

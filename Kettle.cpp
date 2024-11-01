@@ -2,19 +2,18 @@
 #include <windows.h>
 using namespace std;
 #include "Kettle.h"
-// ×àéíèê
 
 void Kettle::SetCapacity(double c) {
 	if (c >= 0.5 && c <= 2.5) {
-		ñapacity = c;
+		Ñapacity = c;
 	}
 	else {
-		throw "Íåâåðíîå çíà÷åèíå";
+		throw "ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ¸Ð½Ðµ";
 	}
 }
 
 double Kettle::GetCapacity() const {
-	return ñapacity;
+	return Ñapacity;
 }
 
 void Kettle::SetPower(double p) {
@@ -22,7 +21,7 @@ void Kettle::SetPower(double p) {
 		power = p;
 	}
 	else {
-		throw "Íåâåðíîå çíà÷åèíå";
+		throw "ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ¸Ð½Ðµ";
 	};
 }
 
@@ -51,7 +50,7 @@ void Kettle::SetWaterTemperature(double t) {
 		water_temperature = t;
 	}
 	else {
-		throw "Íåâåðíîå çíà÷åèíå";
+		throw "ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ¸Ð½Ðµ";
 	};
 }
 
@@ -60,7 +59,7 @@ double Kettle::GetWaterTemperature() const {
 }
 
 void Kettle::PrintKettle() {
-	cout << ñapacity << "\n";
+	cout << Ñapacity << "\n";
 	cout << power << "\n";
 	cout << body_material << "\n";
 	cout << color << "\n";
@@ -69,26 +68,26 @@ void Kettle::PrintKettle() {
 }
 
 void Kettle::TurnOn() {
-	cout << "Âêëþ÷àåì ÷àéíèê\n";
-	cout << "Íà äèñïëåå çàãîðàåòñÿ ñâåò, è ÷åðåç ìãíîâåíèå ñëûøåí øèïÿùèé çâóê, êîãäà âîäà íà÷èíàåò íàãðåâàòüñÿ.\n";
+	cout << "Ð’ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ñ‡Ð°Ð¹Ð½Ð¸Ðº\n";
+	cout << "ÐÐ° Ð´Ð¸ÑÐ¿Ð»ÐµÐµ Ð·Ð°Ð³Ð¾Ñ€Ð°ÐµÑ‚ÑÑ ÑÐ²ÐµÑ‚, Ð¸ Ñ‡ÐµÑ€ÐµÐ· Ð¼Ð³Ð½Ð¾Ð²ÐµÐ½Ð¸Ðµ ÑÐ»Ñ‹ÑˆÐµÐ½ ÑˆÐ¸Ð¿ÑÑ‰Ð¸Ð¹ Ð·Ð²ÑƒÐº, ÐºÐ¾Ð³Ð´Ð° Ð²Ð¾Ð´Ð° Ð½Ð°Ñ‡Ð¸Ð½Ð°ÐµÑ‚ Ð½Ð°Ð³Ñ€ÐµÐ²Ð°Ñ‚ÑŒÑÑ.\n";
 	Sleep(500);
-	cout << "Èäåò ïðîöåññ çàêèïàíèÿ ÷àéíèêà...\n";
+	cout << "Ð˜Ð´ÐµÑ‚ Ð¿Ñ€Ð¾Ñ†ÐµÑÑ Ð·Ð°ÐºÐ¸Ð¿Ð°Ð½Ð¸Ñ Ñ‡Ð°Ð¹Ð½Ð¸ÐºÐ°...\n";
 	Sleep(3000);
-	cout << "×àéíèê çàêåïåë, íàëèâàé ÷àé íà çäîðîâüå! :)\n";
+	cout << "Ð§Ð°Ð¹Ð½Ð¸Ðº Ð·Ð°ÐºÐµÐ¿ÐµÐ», Ð½Ð°Ð»Ð¸Ð²Ð°Ð¹ Ñ‡Ð°Ð¹ Ð½Ð° Ð·Ð´Ð¾Ñ€Ð¾Ð²ÑŒÐµ! :)\n";
 }
 
 void Kettle::TurnOff() {
-	cout << "Âûêëþ÷àåì ÷àéíèê\n";
+	cout << "Ð’Ñ‹ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ Ñ‡Ð°Ð¹Ð½Ð¸Ðº\n";
 }
 
 void Kettle::ConnectCordKettle() {
-	cout << "Ïîäêëþ÷àåì øíóð ê ÷àéíèêó\n";
+	cout << "ÐŸÐ¾Ð´ÐºÐ»ÑŽÑ‡Ð°ÐµÐ¼ ÑˆÐ½ÑƒÑ€ Ðº Ñ‡Ð°Ð¹Ð½Ð¸ÐºÑƒ\n";
 }
 
 void Kettle::DisconnectCordKettle() {
-	cout << "Îòñîåäèíÿåì øíóð îò ÷àéíèêà\n";
+	cout << "ÐžÑ‚ÑÐ¾ÐµÐ´Ð¸Ð½ÑÐµÐ¼ ÑˆÐ½ÑƒÑ€ Ð¾Ñ‚ Ñ‡Ð°Ð¹Ð½Ð¸ÐºÐ°\n";
 }
 
 void Kettle::Pour() {
-	cout << "Íàëèâàåì â ÷àéíèê\n";
+	cout << "ÐÐ°Ð»Ð¸Ð²Ð°ÐµÐ¼ Ð² Ñ‡Ð°Ð¹Ð½Ð¸Ðº\n";
 }
