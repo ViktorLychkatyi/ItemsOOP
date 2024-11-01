@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <windows.h>
 using namespace std;
 #include "Phone.h"
 #include "Banknote.h"
@@ -19,17 +20,19 @@ int main() {
 	phone.SetProcessor("Exynos 1480");
 	phone.PrintPhone();
 
+	phone.TurnOn();
 	phone.Call();
 	phone.SendMessage();
-	phone.TakePhoto();
-	phone.TurnOn();
-	phone.TurnOff();
+	phone.Photo();
+	phone.Use();
 	phone.Charge();
+	phone.TurnOff();
 	cout << "\n";
 
 	Banknote banknote;
 	banknote.SetDenomination("The United of States");
-	banknote.SetCurrency("100 USD");
+	banknote.SetNubmer(100);
+	banknote.SetCurrency("USD");
 	banknote.SetSerialNumber("KB46279860IB2");
 	banknote.SetCountry("USA");
 	banknote.SetState("New");
@@ -43,26 +46,26 @@ int main() {
 	cout << "\n";
 
 	Kettle kettle;
-	kettle.SetCapacity("1.7 литра");
-	kettle.SetPower("2000 Вт");
+	kettle.SetCapacity(1.7);
+	kettle.SetPower(2200);
 	kettle.SetBodyMaterial("Нержавеющая сталь");
 	kettle.SetColor("Черный");
-	kettle.SetWaterTemperature("25°C");
+	kettle.SetWaterTemperature(60);
 	kettle.PrintKettle();
 
 	kettle.TurnOn();
 	kettle.TurnOff();
 	kettle.ConnectCordKettle();
 	kettle.DisconnectCordKettle();
-	kettle.AutoOffKettle();
+	kettle.Pour();
 	cout << "\n";
 
 	Pen pen;
 	pen.SetInkColor("Синий");
-	pen.SetPenThickness("0.5 мм");
-	pen.SetPenLength("14 см");
+	pen.SetPenThickness(0.5);
+	pen.SetPenLength(140);
 	pen.SetBodyMaterial("Пластик");
-	pen.SetInkAmount("50%");
+	pen.SetInkAmount(100);
 	pen.PrintPen();
 
 	pen.Write();
@@ -85,7 +88,5 @@ int main() {
 	book.ReadPage();
 	book.AddBookmark();
 	book.BookInfo();
-	book.NextPage();
-	book.PrevPage();
 	cout << "\n";
 }

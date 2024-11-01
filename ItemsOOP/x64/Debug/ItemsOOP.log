@@ -1,2 +1,13 @@
-﻿  ItemsOOP.cpp
+﻿  Banknote.cpp
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(23,19): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(24,19): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(25,19): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(26,20): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(27,20): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(28,20): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(29,21): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(30,21): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+C:\Users\Viktor\Desktop\ItemsOOP\Banknote.cpp(31,21): warning C4390: ";": обнаружен пустой контролируемый оператор; это правильно?
+  ItemsOOP.cpp
+  Создание кода...
   ItemsOOP.vcxproj -> C:\Users\Viktor\Desktop\ItemsOOP\x64\Debug\ItemsOOP.exe

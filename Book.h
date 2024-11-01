@@ -10,17 +10,21 @@ private:
 	string genre;
 	int year_publication;
 
+	int choice;
+	int page = 1;
+	string text;
+
 public:
 	void SetTitle(string t);
-	string GetTitle(string t);
+	string GetTitle() const;
 	void SetAuthor(string a);
-	string GetAuthor(string a);
+	string GetAuthor() const;
 	void SetNumberPages(int n);
-	int GetNumberPages(int n);
+	int GetNumberPages() const;
 	void SetGenre(string g);
-	string GetGenre(string g);
+	string GetGenre() const;
 	void SetYearPublication(int y);
-	int GetYearPublication(int y);
+	int GetYearPublication() const;
 
 	void PrintBook();
 	void Open();
@@ -28,6 +32,4 @@ public:
 	void ReadPage();
 	void AddBookmark();
 	void BookInfo();
-	void NextPage();
-	void PrevPage();
 };

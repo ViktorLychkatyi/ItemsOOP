@@ -4,28 +4,28 @@ using namespace std;
 // Ýëåêòðî÷àéíèê
 class Kettle {
 private:
-	string ñapacity;
-	string power;
+	double ñapacity;
+	double power;
 	string body_material;
 	string color;
-	string water_temperature;
+	double water_temperature;
 
 public:
-	void SetCapacity(string c);
-	string GetCapacity(string c);
-	void SetPower(string p);
-	string GetPower(string p);
+	void SetCapacity(double c);
+	double GetCapacity() const;
+	void SetPower(double p);
+	double GetPower() const;
 	void SetBodyMaterial(string m);
-	string GetBodyMaterial(string m);
+	string GetBodyMaterial() const;
 	void SetColor(string c);
-	string GetColor(string c);
-	void SetWaterTemperature(string t);
-	string GetWaterTemperature(string t);
+	string GetColor() const;
+	void SetWaterTemperature(double t);
+	double GetWaterTemperature() const;
 	void PrintKettle();
 
 	void TurnOn();
 	void TurnOff();
 	void ConnectCordKettle();
 	void DisconnectCordKettle();
-	void AutoOffKettle();
+	void Pour();
 };

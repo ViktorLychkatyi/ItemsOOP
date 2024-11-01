@@ -1,20 +1,31 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 #include "Kettle.h"
 
-void Kettle::SetCapacity(string c) {
-	сapacity = c;
+void Kettle::SetCapacity(double c) {
+	if (c >= 0.5 && c <= 2.5) {
+		сapacity = c;
+	}
+	else {
+		throw "Неверное значеине";
+	}
 }
 
-string Kettle::GetCapacity(string c) {
+double Kettle::GetCapacity() const {
 	return сapacity;
 }
 
-void Kettle::SetPower(string p) {
-	power = p;
+void Kettle::SetPower(double p) {
+	if (p >= 500 && p <= 3000) {
+		power = p;
+	}
+	else {
+		throw "Неверное значеине";
+	};
 }
 
-string Kettle::GetPower(string p) {
+double Kettle::GetPower() const {
 	return power;
 }
 
@@ -22,7 +33,7 @@ void Kettle::SetBodyMaterial(string m) {
 	body_material = m;
 }
 
-string Kettle::GetBodyMaterial(string m) {
+string Kettle::GetBodyMaterial() const {
 	return body_material;
 }
 
@@ -30,15 +41,20 @@ void Kettle::SetColor(string c) {
 	color = c;
 }
 
-string Kettle::GetColor(string c) {
+string Kettle::GetColor() const {
 	return color;
 }
 
-void Kettle::SetWaterTemperature(string t) {
-	water_temperature = t;
+void Kettle::SetWaterTemperature(double t) {
+	if (t >= 40 && t <= 100) {
+		water_temperature = t;
+	}
+	else {
+		throw "Неверное значеине";
+	};
 }
 
-string Kettle::GetWaterTemperature(string t) {
+double Kettle::GetWaterTemperature() const {
 	return water_temperature;
 }
 
@@ -54,11 +70,14 @@ void Kettle::PrintKettle() {
 void Kettle::TurnOn() {
 	cout << "Включаем чайник\n";
 	cout << "На дисплее загорается свет, и через мгновение слышен шипящий звук, когда вода начинает нагреваться.\n";
+	Sleep(500);
+	cout << "Идет процесс закипания чайника...\n";
+	Sleep(3000);
+	cout << "Чайник закепел, наливай чай на здоровье! :)\n";
 }
 
 void Kettle::TurnOff() {
 	cout << "Выключаем чайник\n";
-	cout << "И слышим, как он начинает остывать, издавая лёгкий треск, а пар медленно поднимается вверх.\n";
 }
 
 void Kettle::ConnectCordKettle() {
@@ -69,6 +88,6 @@ void Kettle::DisconnectCordKettle() {
 	cout << "Отсоединяем шнур от чайника\n";
 }
 
-void Kettle::AutoOffKettle() {
-	cout << "Автоматическое выключение чайника после закипания воды.\n";
+void Kettle::Pour() {
+	cout << "Наливаем в чайник\n";
 }
