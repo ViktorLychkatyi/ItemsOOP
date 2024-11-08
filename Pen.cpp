@@ -3,8 +3,6 @@
 using namespace std;
 #include "Pen.h"
 
-// pen
-
 void Pen::SetInkColor(const char* ink_color) {
 	this->ink_color = new char[100];
 	strcpy_s(this->ink_color, 99, ink_color);
@@ -19,7 +17,7 @@ void Pen::SetPenThickness(double t) {
 		this->pen_thickness = t;
 	}
 	else {
-		throw "Неверное значение";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ";
 	}
 }
 
@@ -32,7 +30,7 @@ void Pen::SetPenLength(double l) {
 		this->pen_length = l;
 	}
 	else {
-		throw "Неверное значение";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ";
 	}
 }
 
@@ -53,7 +51,7 @@ void Pen::SetInkAmount(int a) {
 		this->ink_amount = a;
 	}
 	else {
-		throw "Неверное значение";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ";
 	}
 }
 
@@ -71,10 +69,10 @@ void Pen::Print() {
 }
 
 Pen::Pen() {
-	SetInkColor("Синий");
+	SetInkColor("РЎРёРЅРёР№");
 	SetPenThickness(0.5);
 	SetPenLength(140);
-	SetBodyMaterial("Пластик");
+	SetBodyMaterial("РџР»Р°СЃС‚РёРє");
 	SetInkAmount(100);
 	Print();
 	pen_count++;
@@ -91,22 +89,22 @@ Pen::Pen(const char* ink_color, const double t, const double l, const string m, 
 }
 
 Pen::Pen(const string ink_color) {
-	cout << "Конструктор копирования\n\n";
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ\n\n";
 	SetBodyMaterial(ink_color.c_str());
 }
 
 Pen::Pen(Pen& original) {
-	cout << "Создан конструктор\n\n";
+	cout << "РЎРѕР·РґР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ\n\n";
 	SetBodyMaterial(original.ink_color);
 }
 
 Pen::Pen(Pen&& original) {
-	cout << "Создан конструктор\n\n";
+	cout << "РЎРѕР·РґР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ\n\n";
 	SetBodyMaterial(original.ink_color);
 }
 
 Pen::~Pen() {
-	cout << "Деструктор вызван\n\n";
+	cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РІС‹Р·РІР°РЅ\n\n";
 	delete[] this->ink_color;
 	pen_count--;
 }
@@ -115,10 +113,10 @@ void Pen::Write() {
 	while (true) {
 		if (ink_amount > 0) {
 			ink_amount--;
-			cout << "Пишем, осталось чернил: " << ink_amount << "%" << "\n";
+			cout << "РџРёС€РµРј, РѕСЃС‚Р°Р»РѕСЃСЊ С‡РµСЂРЅРёР»: " << ink_amount << "%" << "\n";
 		}
 		else {
-			cout << "Чернила закончились. Пожалуйста, поменяйте ампулу.\n";
+			cout << "Р§РµСЂРЅРёР»Р° Р·Р°РєРѕРЅС‡РёР»РёСЃСЊ. РџРѕР¶Р°Р»СѓР№СЃС‚Р°, РїРѕРјРµРЅСЏР№С‚Рµ Р°РјРїСѓР»Сѓ.\n";
 			break;
 		}
 	}
@@ -127,21 +125,21 @@ void Pen::Write() {
 void Pen::ChangeAmpoule() {
 	if (ink_amount < 100) {
 		ink_amount = 100;
-		cout << "Вы поменяли на новую ампулку. Теперь осталось чернил: " << ink_amount << "%" << "\n";
+		cout << "Р’С‹ РїРѕРјРµРЅСЏР»Рё РЅР° РЅРѕРІСѓСЋ Р°РјРїСѓР»РєСѓ. РўРµРїРµСЂСЊ РѕСЃС‚Р°Р»РѕСЃСЊ С‡РµСЂРЅРёР»: " << ink_amount << "%" << "\n";
 	}
 	else {
-		cout << "У вас итак уже новая ампулка с чернилами.\n";
+		cout << "РЈ РІР°СЃ РёС‚Р°Рє СѓР¶Рµ РЅРѕРІР°СЏ Р°РјРїСѓР»РєР° СЃ С‡РµСЂРЅРёР»Р°РјРё.\n";
 	}
 }
 
 void Pen::CheckInklevel() {
-	cout << "У вас осталось чернил: " << ink_amount << "%" << "\n";
+	cout << "РЈ РІР°СЃ РѕСЃС‚Р°Р»РѕСЃСЊ С‡РµСЂРЅРёР»: " << ink_amount << "%" << "\n";
 }
 
 void Pen::CloseCap() {
-	cout << "Вы закрыли ручку с помощью колпачка\n";
+	cout << "Р’С‹ Р·Р°РєСЂС‹Р»Рё СЂСѓС‡РєСѓ СЃ РїРѕРјРѕС‰СЊСЋ РєРѕР»РїР°С‡РєР°\n";
 }
 
 void Pen::OpenCap() {
-	cout << "Вы открыли ручку, сняв колпачок\n";
+	cout << "Р’С‹ РѕС‚РєСЂС‹Р»Рё СЂСѓС‡РєСѓ, СЃРЅСЏРІ РєРѕР»РїР°С‡РѕРє\n";
 }

@@ -3,8 +3,6 @@
 using namespace std;
 #include "Banknote.h"
 
-// banknote
-
 void Banknote::SetDenomination(const char* denomination) {
 	this->denomination = new char[100];
 	strcpy_s(this->denomination, 99, denomination);

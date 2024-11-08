@@ -7,8 +7,6 @@ using namespace std;
 #include "Pen.h"
 #include "Book.h"
 
-// main
-
 int main() {
 	setlocale(0, "");
 

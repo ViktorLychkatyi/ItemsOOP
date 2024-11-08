@@ -1,8 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// kettle
-
 class Kettle {
 private:
 	double capacity;

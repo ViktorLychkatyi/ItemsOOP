@@ -2,8 +2,6 @@
 #include <windows.h>
 using namespace std;
 
-// phone
-
 class Phone {
 private:
 	char* brand;

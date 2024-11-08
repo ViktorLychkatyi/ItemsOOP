@@ -3,8 +3,6 @@
 using namespace std;
 #include "Book.h"
 
-// book
-
 void Book::SetTitle(const char* title) {
     this->title = new char[100];
     strcpy_s(this->title, 99, title);
