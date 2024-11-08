@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 #include "Book.h"
-// да
 
 void Book::SetTitle(const char* title) {
     this->title = new char[100];

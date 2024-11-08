@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
-// да
 
 void Phone::SetBrand(const char* brand) {
 	this->brand = new char[100];

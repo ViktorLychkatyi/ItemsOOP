@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
@@ -6,7 +6,6 @@ using namespace std;
 #include "Kettle.h"
 #include "Pen.h"
 #include "Book.h"
-// да
 
 int main() {
 	setlocale(0, "");

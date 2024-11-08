@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 #include "Pen.h"
-// да
 
 void Pen::SetInkColor(const char* ink_color) {
 	this->ink_color = new char[100];

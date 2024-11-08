@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 #include "Kettle.h"
-// да
 
 void Kettle::SetCapacity(double c) {
 	if (c >= 0.5 && c <= 2.5) {

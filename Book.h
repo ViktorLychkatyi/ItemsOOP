@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-// да
 
 class Book {
 private:

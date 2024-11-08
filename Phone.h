@@ -1,7 +1,6 @@
 #include <iostream>
 #include <windows.h>
 using namespace std;
-// да
 
 class Phone {
 private:

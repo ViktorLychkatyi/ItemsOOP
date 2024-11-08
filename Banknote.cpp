@@ -2,7 +2,6 @@
 #include <windows.h>
 using namespace std;
 #include "Banknote.h"
-// да
 
 void Banknote::SetDenomination(const char* denomination) {
 	this->denomination = new char[100];
@@ -24,15 +23,15 @@ int Banknote::GetNumber() const {
 void Banknote::SetCurrency(string c) {
 	if (currency == "USD" || "EURO" || "UAH") {
 		if (number == 1)
-			if (number == 2)
-				if (number == 5)
-					if (number == 10)
-						if (number == 20)
-							if (number == 50)
-								if (number == 100)
-									if (number == 200)
-										if (number == 500)
-											this->currency = c;
+		if (number == 2)
+		if (number == 5)
+		if (number == 10)
+		if (number == 20)
+		if (number == 50)
+		if (number == 100)
+		if (number == 200)
+		if (number == 500)
+		this->currency = c;
 	}
 	else {
 		throw "Неверное значение";
@@ -143,31 +142,31 @@ void Banknote::Exchange() {
 	cout << "Ваш выбор: ";
 	cin >> choice;
 	switch (choice) {
-	case 0:
-		if (currency == "USD" || "EURO" || "UAH") {
-			cout << "Вы решили оставить как есть\n";
-		}
-		break;
-	case 1:
-		if (currency == "USD" || "EURO" || "UAH") {
-			cout << "Вы обменяли на Доллар\n";
-			cout << "Текущая сумма: " << number << " " << "USD" << "\n";
-		}
-		break;
-	case 2:
-		if (currency == "USD" || "EURO" || "UAH") {
-			cout << "Вы обменяли на Евро\n";
-			cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
-		}
-		break;
-	case 3:
-		if (currency == "USD" || "EURO" || "UAH") {
-			cout << "Вы обменяли на Гривну\n";
-			cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
-		}
-		break;
-	default:
-		cout << "Неверный ввод";
+		case 0:
+			if (currency == "USD" || "EURO" || "UAH") {
+				cout << "Вы решили оставить как есть\n";
+			}
+			break;
+		case 1:
+			if (currency == "USD" || "EURO" || "UAH") {
+				cout << "Вы обменяли на Доллар\n";
+				cout << "Текущая сумма: " << number << " " << "USD" << "\n";
+			}
+			break;
+		case 2:
+			if (currency == "USD" || "EURO" || "UAH") {
+				cout << "Вы обменяли на Евро\n";
+				cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
+			}
+			break;
+		case 3:
+			if (currency == "USD" || "EURO" || "UAH") {
+				cout << "Вы обменяли на Гривну\n";
+				cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
+			}
+			break;
+		default:
+			cout << "Неверный ввод";
 	}
 }
 
