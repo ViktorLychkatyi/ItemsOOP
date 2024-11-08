@@ -1,10 +1,10 @@
 #include <iostream>
 using namespace std;
+// да
 
-// Книга
 class Book {
 private:
-	string title;
+	char* title;
 	string author;
 	int number_pages;
 	string genre;
@@ -13,10 +13,11 @@ private:
 	int choice;
 	int page = 1;
 	string text;
+	int book_count = 0;
 
 public:
-	void SetTitle(string t);
-	string GetTitle() const;
+	void SetTitle(const char* title);
+	const char* GetTitle() const;
 	void SetAuthor(string a);
 	string GetAuthor() const;
 	void SetNumberPages(int n);
@@ -26,7 +27,14 @@ public:
 	void SetYearPublication(int y);
 	int GetYearPublication() const;
 
-	void PrintBook();
+	Book(); // конструктор без параметров
+	Book(const char* title, const string a, const int n, const string g, const int y); // конструктор с параметрами
+	void Print(); // вывод
+	Book(const string title); // конструктор преобразования
+	~Book(); // делигирование
+	Book(Book& original); // конструктор копирования
+	Book(Book&& original); // конструктор копирования с переносом
+
 	void Open();
 	void Close();
 	void ReadPage();

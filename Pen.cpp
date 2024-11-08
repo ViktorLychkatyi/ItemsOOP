@@ -2,19 +2,20 @@
 #include <windows.h>
 using namespace std;
 #include "Pen.h"
-// Ручка
+// да
 
-void Pen::SetInkColor(string i) {
-	ink_color = i;
+void Pen::SetInkColor(const char* ink_color) {
+	this->ink_color = new char[100];
+	strcpy_s(this->ink_color, 99, ink_color);
 }
 
-string Pen::GetInkColor() const {
-	return ink_color;
+const char* Pen::GetInkColor() const {
+	return this->ink_color;
 }
 
 void Pen::SetPenThickness(double t) {
 	if (t >= 0.5 && t <= 2.0) {
-		pen_thickness = t;
+		this->pen_thickness = t;
 	}
 	else {
 		throw "Неверное значение";
@@ -22,12 +23,12 @@ void Pen::SetPenThickness(double t) {
 }
 
 double Pen::GetPenThickness() const {
-	return pen_thickness;
+	return this->pen_thickness;
 }
 
 void Pen::SetPenLength(double l) {
 	if (l >= 100 && l <= 150) {
-		pen_length = l;
+		this->pen_length = l;
 	}
 	else {
 		throw "Неверное значение";
@@ -35,20 +36,20 @@ void Pen::SetPenLength(double l) {
 }
 
 double Pen::GetPenLength() const {
-	return pen_length;
+	return this->pen_length;
 }
 
 void Pen::SetBodyMaterial(string m) {
-	body_material = m;
+	this->body_material = m;
 }
 
 string Pen::GetBodyMaterial() const {
-	return body_material;
+	return this->body_material;
 }
 
 void Pen::SetInkAmount(int a) {
 	if (a >= 0 && a <= 100) {
-		ink_amount = a;
+		this->ink_amount = a;
 	}
 	else {
 		throw "Неверное значение";
@@ -56,16 +57,57 @@ void Pen::SetInkAmount(int a) {
 }
 
 int Pen::GetInkAmount() const {
-	return ink_amount;
+	return this->ink_amount;
 }
 
-void Pen::PrintPen() {
-	cout << ink_color << "\n";
-	cout << pen_thickness << "\n";
-	cout << pen_length << "\n";
-	cout << body_material << "\n";
-	cout << ink_amount << "\n";
+void Pen::Print() {
+	cout << this->ink_color << "\n";
+	cout << this->pen_thickness << "\n";
+	cout << this->pen_length << "\n";
+	cout << this->body_material << "\n";
+	cout << this->ink_amount << "\n";
 	cout << "\n";
+}
+
+Pen::Pen() {
+	SetInkColor("Синий");
+	SetPenThickness(0.5);
+	SetPenLength(140);
+	SetBodyMaterial("Пластик");
+	SetInkAmount(100);
+	Print();
+	pen_count++;
+}
+
+Pen::Pen(const char* ink_color, const double t, const double l, const string m, const int a) {
+	SetInkColor(ink_color);
+	SetPenThickness(t);
+	SetPenLength(l);
+	SetBodyMaterial(m);
+	SetInkAmount(a);
+	Print();
+	pen_count++;
+}
+
+Pen::Pen(const string ink_color) {
+	cout << "Конструктор копирования\n\n";
+	SetBodyMaterial(ink_color.c_str());
+}
+
+Pen::Pen(Pen& original) {
+	cout << "Создан конструктор\n\n";
+	SetBodyMaterial(original.ink_color);
+}
+
+Pen::Pen(Pen&& original) {
+	cout << "Создан конструктор\n\n";
+	SetBodyMaterial(original.ink_color);
+}
+
+Pen::~Pen() {
+	cout << "Деструктор вызван\n\n";
+	delete[] this->ink_color;
+	pen_count--;
 }
 
 void Pen::Write() {

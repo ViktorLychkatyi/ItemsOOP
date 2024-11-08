@@ -1,12 +1,10 @@
 #include <iostream>
-#include <windows.h>
 using namespace std;
-// Купюра
+// да
 
-// Купюра
 class Banknote {
 private:
-	string denomination;
+	char* denomination;
 	int number;
 	string currency;
 	string serial_number;
@@ -14,21 +12,30 @@ private:
 	string state;
 
 	int choice;
+	int banknote_count = 0;
 
 public:
-	void SetDenomination(string d);
-	string GetDenomination() const;
+	void SetDenomination(const char* denomination);
+	const char* GetDenomination() const;
 	void SetNubmer(int n);
 	int GetNumber() const;
 	void SetCurrency(string c);
 	string GetCurrency() const;
 	void SetSerialNumber(string s);
 	string GetSerialNumber() const;
-	void SetCountry(string c);
+	void SetCountry(string k);
 	string GetCountry() const;
-	void SetState(string s);
+	void SetState(string t);
 	string GetState() const;
-	void PrintBanknote();
+	int GetCount();
+
+	Banknote(); // конструктор без параметров
+	Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t); // конструктор с параметрами
+	void Print(); // вывод
+	Banknote(string denomination); // конструктор преобразования
+	~Banknote(); // делигирование
+	Banknote(const Banknote& original); // конструктор копирования
+	Banknote(const Banknote&& original); // конструктор копирования с переносом
 
 	void Exchange();
 	void State();

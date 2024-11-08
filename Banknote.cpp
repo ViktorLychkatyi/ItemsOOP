@@ -1,68 +1,71 @@
 #include <iostream>
+#include <windows.h>
 using namespace std;
 #include "Banknote.h"
-// Купюра
+// да
 
-void Banknote::SetDenomination(string d) {
-	denomination = d;
+void Banknote::SetDenomination(const char* denomination) {
+	this->denomination = new char[100];
+	strcpy_s(this->denomination, 99, denomination);
 }
 
-string Banknote::GetDenomination() const {
-	return denomination;
+const char* Banknote::GetDenomination() const {
+	return this->denomination;
 }
 
 void Banknote::SetNubmer(int n) {
-	number = n;
+	this->number = n;
 }
 
 int Banknote::GetNumber() const {
-	return number;
+	return this->number;
 }
 
 void Banknote::SetCurrency(string c) {
 	if (currency == "USD" || "EURO" || "UAH") {
-		if (number == 1);
-		if (number == 2);
-		if (number == 5);
-		if (number == 10);
-		if (number == 20);
-		if (number == 50);
-		if (number == 100);
-		if (number == 200);
-		if (number == 500);
-		currency = c;
+		if (number == 1)
+			if (number == 2)
+				if (number == 5)
+					if (number == 10)
+						if (number == 20)
+							if (number == 50)
+								if (number == 100)
+									if (number == 200)
+										if (number == 500)
+											this->currency = c;
 	}
 	else {
 		throw "Неверное значение";
 	}
 	if (number <= 0) {
-		number = 100; // по умолчанию
+		number = 100;
 	}
+	this->currency = c;
 }
 
 string Banknote::GetCurrency() const {
-	return currency;
+	return this->currency;
 }
 
 void Banknote::SetSerialNumber(string s) {
-	serial_number = s;
+	this->serial_number = s;
 }
 
 string Banknote::GetSerialNumber() const {
-	return serial_number;
+	return this->serial_number;
 }
 
-void Banknote::SetCountry(string c) {
-	country = c;
+void Banknote::SetCountry(string k) {
+	this->country = k;
 }
 
 string Banknote::GetCountry() const {
-	return country;
+	return this->country;
 }
 
-void Banknote::SetState(string s) {
+void Banknote::SetState(string t) {
 	if (state == "New" || "Новое") {
-		state = s;
+		this->state = t;
 	}
 	else {
 		throw "Неверное действие";
@@ -70,16 +73,64 @@ void Banknote::SetState(string s) {
 }
 
 string Banknote::GetState() const {
-	return state;
+	return this->state;
 }
 
-void Banknote::PrintBanknote() {
-	cout << denomination << "\n";
-	cout << currency << "\n";
-	cout << serial_number << "\n";
-	cout << country << "\n";
-	cout << state << "\n";
+Banknote::Banknote() {
+	SetDenomination("The United of States");
+	SetNubmer(100);
+	SetCurrency("USD");
+	SetSerialNumber("KB46279860IB2");
+	SetCountry("USA");
+	SetState("New");
+	Print();
+	banknote_count++;
+}
+
+Banknote::Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t) {
+	SetDenomination(denomination);
+	SetNubmer(n);
+	SetCurrency(c);
+	SetSerialNumber(s);
+	SetCountry(k);
+	SetState(t);
+	Print();
+	banknote_count++;
+}
+
+void Banknote::Print() {
+	cout << this->denomination << "\n";
+	cout << this->number << "\n";
+	cout << this->currency << "\n";
+	cout << this->serial_number << "\n";
+	cout << this->country << "\n";
+	cout << this->state << "\n";
 	cout << "\n";
+}
+
+Banknote::Banknote(string denomination) {
+	cout << "Создан конструктор\n\n";
+	SetDenomination(denomination.c_str());
+}
+
+Banknote::Banknote(const Banknote& original) {
+	cout << "Создан конструктор\n\n";
+	SetDenomination(original.denomination);
+}
+
+int Banknote::GetCount() {
+	return banknote_count;
+}
+
+Banknote::Banknote(const Banknote&& original) {
+	cout << "Конструктор копирования перемещения\n";
+	SetDenomination(original.denomination);
+}
+
+Banknote::~Banknote() {
+	cout << "Деструктор вызван\n\n";
+	delete[] this->denomination;
+	banknote_count--;
 }
 
 void Banknote::Exchange() {
@@ -92,31 +143,31 @@ void Banknote::Exchange() {
 	cout << "Ваш выбор: ";
 	cin >> choice;
 	switch (choice) {
-		case 0:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы решили оставить как есть\n";
-			}
-			break;
-		case 1:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Доллар\n";
-				cout << "Текущая сумма: " << number << " " << "USD" << "\n";
-			}
-			break;
-		case 2:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Евро\n";
-				cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
-			}
-			break;
-		case 3:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Гривну\n";
-				cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
-			}
-			break;
-		default:
-			cout << "Неверный ввод";
+	case 0:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы решили оставить как есть\n";
+		}
+		break;
+	case 1:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Доллар\n";
+			cout << "Текущая сумма: " << number << " " << "USD" << "\n";
+		}
+		break;
+	case 2:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Евро\n";
+			cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
+		}
+		break;
+	case 3:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Гривну\n";
+			cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
+		}
+		break;
+	default:
+		cout << "Неверный ввод";
 	}
 }
 

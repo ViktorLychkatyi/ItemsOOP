@@ -2,64 +2,112 @@
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
-// Телефон
+// да
 
-void Phone::SetBrand(string b) {
-	brand = b;
+void Phone::SetBrand(const char* brand) {
+	this->brand = new char[100];
+	strcpy_s(this->brand, 99, brand);
 }
 
-string Phone::GetBrand() const {
-	return brand;
+const char* Phone::GetBrand() const {
+	return this->brand;
 }
 
 void Phone::SetModel(string m) {
-	model = m;
+	this->model = m;
 }
 
 string Phone::GetModel() const {
-	return model;
+	return this->model;
 }
 
-void Phone::SetMemorySize(string s) {
-	memory_size = s;
+void Phone::SetMemorySize(const char* s) {
+	this->memory_size = s;
 }
 
 string Phone::GetMemorySize() const {
-	return memory_size;
+	return this->memory_size;
 }
 
 void Phone::SetColor(string c) {
-	color = c;
+	this->color = c;
 }
 
 string Phone::GetColor() const {
-	return color;
+	return this->color;
 }
 
 void Phone::SetOperatingSystem(string o) {
-	operating_system = o;
+	this->operating_system = o;
 }
 
 string Phone::GetOperatingSystem() const {
-	return operating_system;
+	return this->operating_system;
 }
 
 void Phone::SetProcessor(string p) {
-	proccesor = p;
+	this->proccesor = p;
 }
 
 string Phone::GetProcessor() const {
-	return proccesor;
+	return this->proccesor;
 }
 
-void Phone::PrintPhone() {
-	cout << brand << "\n";
-	cout << model << "\n";
-	cout << memory_size << "\n";
-	cout << color << "\n";
-	cout << operating_system << "\n";
-	cout << proccesor << "\n";
+void Phone::Print() const {
+	cout << this->brand << "\n";
+	cout << this->model << "\n";
+	cout << this->memory_size << "\n";
+	cout << this->color << "\n";
+	cout << this->operating_system << "\n";
+	cout << this->proccesor << "\n";
 	cout << "\n";
+}
+
+static int GetCount() {
+	static int banknote_count;
+}
+
+Phone::Phone() {
+	SetBrand("Samsung");
+	SetModel("Galaxy A55");
+	SetMemorySize("256 GB");
+	SetColor("Black");
+	SetOperatingSystem("Android");
+	SetProcessor("Exynos 1480");
+	Print();
+	phone_count++;
+}
+
+Phone::Phone(const char* brand, const string m, const char* s, const string c, const string o, const string p) {
+	SetBrand(brand);
+	SetModel(m);
+	SetMemorySize(s);
+	SetColor(c);
+	SetOperatingSystem(o);
+	SetProcessor(p);
+	Print();
+	phone_count++;
+}
+
+Phone::Phone(const string b) {
+	cout << "Создан конструктор\n\n";
+	SetBrand(b.c_str());
+}
+
+Phone::Phone(Phone& original) {
+	cout << "Конструктор копирования\n\n";
+	SetBrand(original.brand);
+}
+
+Phone::Phone(Phone&& original) {
+	cout << "Конструктор копирования перемещения\n";
+	SetBrand(original.brand);
+}
+
+Phone::~Phone() {
+	cout << "Деструктор вызван\n\n";
+	delete[] this->brand;
+	phone_count--;
 }
 
 void Phone::Call() {
@@ -70,31 +118,31 @@ void Phone::Call() {
 	cout << "Ваш выбор: ";
 	cin >> choice;
 	switch (choice) {
-		case 1:
-			cout << "Звонок\n";
-			cout << "Напишите номер телефона чтобы позвонить: ";
-			cin >> choice;
-			cout << "Вы звоните по этому номеру...\n";
-			Sleep(1000);
-			cout << "Абонент не принимает трубку\n";
-			cout << "Вы возвращетесь обратно в меню\n";
-			break;
-		case 2:
-			cout << "Контакты";
-			cout << "Выберите любого пользователя чтобы позвонить";
-			cout << "1. Оля";
-			cout << "2. Саша";
-			cout << "3. Никита";
-			cin >> choice;
-			cout << "Вы звоните пользователю...\n";
-			Sleep(1000);
-			cout << "Абонент не принимает трубку\n";
-			cout << "Вы возвращетесь обратно в меню\n";
-			break;
+	case 1:
+		cout << "Звонок\n";
+		cout << "Напишите номер телефона чтобы позвонить: ";
+		cin >> choice;
+		cout << "Вы звоните по этому номеру...\n";
+		Sleep(1000);
+		cout << "Абонент не принимает трубку\n";
+		cout << "Вы возвращетесь обратно в меню\n";
+		break;
+	case 2:
+		cout << "Контакты";
+		cout << "Выберите любого пользователя чтобы позвонить";
+		cout << "1. Оля";
+		cout << "2. Саша";
+		cout << "3. Никита";
+		cin >> choice;
+		cout << "Вы звоните пользователю...\n";
+		Sleep(1000);
+		cout << "Абонент не принимает трубку\n";
+		cout << "Вы возвращетесь обратно в меню\n";
+		break;
 	}
 }
 
-void Phone::SendMessage() {	
+void Phone::SendMessage() {
 	cout << "Вы открыли приложение 'Cообщение'\n";
 	cout << "Выберите пользователя:\n";
 	cout << "1. Оля\n";
@@ -149,49 +197,49 @@ void Phone::Photo() {
 	cout << "2. Видеозапись\n";
 	cout << "Ваш выбор: ";
 	cin >> choice;
-		switch (choice) {
-		case 1:
-			cout << "Вы наводите камеру\n";
-			cout << "Нажимая на красную кнопку, сфотографировать? 1. Да или 2. Нет?\n";
+	switch (choice) {
+	case 1:
+		cout << "Вы наводите камеру\n";
+		cout << "Нажимая на красную кнопку, сфотографировать? 1. Да или 2. Нет?\n";
+		cout << "Ваш выбор: ";
+		cin >> choice;
+		if (choice == 1) {
+			cout << "Фотография сделана, перенесена в галерею.\n";
+		}
+		else if (choice == 2) {
+			cout << "Действие завершено.\n";
+			break;
+		}
+		break;
+
+	case 2:
+		cout << "Вы наводите камеру\n";
+		cout << "Нажимая на красную кнопку, снять видео? 1. Да или 2. Нет?\n";
+		cout << "Ваш выбор: ";
+		cin >> choice;
+		if (choice == 1) {
+			cout << "Вы снимаете видео, остановить видеозапись? 1. Да или 2. Нет?\n";
 			cout << "Ваш выбор: ";
 			cin >> choice;
 			if (choice == 1) {
-				cout << "Фотография сделана, перенесена в галерею.\n";
+				cout << "Видео сделано, перенесено в галерею.\n";
 			}
 			else if (choice == 2) {
 				cout << "Действие завершено.\n";
 				break;
 			}
-			break;
-
-		case 2:
-			cout << "Вы наводите камеру\n";
-			cout << "Нажимая на красную кнопку, снять видео? 1. Да или 2. Нет?\n";
-			cout << "Ваш выбор: ";
-			cin >> choice;
-			if (choice == 1) {
-				cout << "Вы снимаете видео, остановить видеозапись? 1. Да или 2. Нет?\n";
-				cout << "Ваш выбор: ";
-				cin >> choice;
-				if (choice == 1) {
-					cout << "Видео сделано, перенесено в галерею.\n";
-				}
-				else if (choice == 2) {
-					cout << "Действие завершено.\n";
-					break;
-				}
-			}
-			else {
-				cout << "Действие завершено.\n";
-				break;
-			}
-			break;
-
-		default:
-			cout << "Неверный выбор. Пожалуйста, выберите 1 или 2.\n";
+		}
+		else {
+			cout << "Действие завершено.\n";
 			break;
 		}
+		break;
+
+	default:
+		cout << "Неверный выбор. Пожалуйста, выберите 1 или 2.\n";
+		break;
 	}
+}
 
 void Phone::TurnOn() {
 	cout << "Вы удерживаете пальцем кнопку для включения телефона\n";
@@ -213,17 +261,17 @@ void Phone::TurnOff() {
 	cout << "Ваш выбор: ";
 	cin >> choice;
 	switch (choice) {
-		case 1: 
-			cout << "Идет заставка телефона...\n";
-			cout << "Выключается телефон\n";
-		case 2:
-			cout << "Вы перезагружаете телефон...\n";
-			Sleep(1000);
-			cout << "Включили телефон\n";
-			Sleep(500);
-			cout << "Включается телефон заставка...\n";
-			Sleep(1500);
-			cout << "Вы включили телефон для использования\n";
+	case 1:
+		cout << "Идет заставка телефона...\n";
+		cout << "Выключается телефон\n";
+	case 2:
+		cout << "Вы перезагружаете телефон...\n";
+		Sleep(1000);
+		cout << "Включили телефон\n";
+		Sleep(500);
+		cout << "Включается телефон заставка...\n";
+		Sleep(1500);
+		cout << "Вы включили телефон для использования\n";
 	}
 	cout << "Выключили телефон\n";
 }
@@ -260,4 +308,3 @@ void Phone::Charge() {
 	}
 	cout << "Подключили зарядку к телефону\n";
 }
-
