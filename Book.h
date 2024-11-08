@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// book
+
 class Book {
 private:
 	char* title;

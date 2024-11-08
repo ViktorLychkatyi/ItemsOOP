@@ -3,6 +3,8 @@
 using namespace std;
 #include "Kettle.h"
 
+// kettle
+
 void Kettle::SetCapacity(double c) {
 	if (c >= 0.5 && c <= 2.5) {
 		this->capacity = c;

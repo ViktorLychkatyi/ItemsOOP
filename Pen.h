@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// pen
+
 class Pen {
 private:
 	char* ink_color;

@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// banknote
+
 class Banknote {
 private:
 	char* denomination;

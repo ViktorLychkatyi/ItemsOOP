@@ -3,6 +3,8 @@
 using namespace std;
 #include "Pen.h"
 
+// pen
+
 void Pen::SetInkColor(const char* ink_color) {
 	this->ink_color = new char[100];
 	strcpy_s(this->ink_color, 99, ink_color);

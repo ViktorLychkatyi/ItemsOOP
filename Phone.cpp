@@ -3,6 +3,8 @@
 using namespace std;
 #include "Phone.h"
 
+// phone
+
 void Phone::SetBrand(const char* brand) {
 	this->brand = new char[100];
 	strcpy_s(this->brand, 99, brand);
