@@ -8,7 +8,7 @@ void Kettle::SetCapacity(double c) {
 		this->capacity = c;
 	}
 	else {
-		throw "Неверное значеине";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРёРЅРµ";
 	}
 }
 
@@ -21,7 +21,7 @@ void Kettle::SetPower(double p) {
 		this->power = p;
 	}
 	else {
-		throw "Неверное значеине";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРёРЅРµ";
 	};
 }
 
@@ -51,7 +51,7 @@ void Kettle::SetWaterTemperature(double t) {
 		this->water_temperature = t;
 	}
 	else {
-		throw "Неверное значеине";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРёРЅРµ";
 	};
 }
 
@@ -71,8 +71,8 @@ void Kettle::Print() {
 Kettle::Kettle() {
 	SetCapacity(1.7);
 	SetPower(2200);
-	SetBodyMaterial("Нержавеющая сталь");
-	SetColor("Черный");
+	SetBodyMaterial("РќРµСЂР¶Р°РІРµСЋС‰Р°СЏ СЃС‚Р°Р»СЊ");
+	SetColor("Р§РµСЂРЅС‹Р№");
 	SetWaterTemperature(60);
 	Print();
 	kettle_count++;
@@ -89,47 +89,47 @@ Kettle::Kettle(const double c, const double p, const char* m, const string k, co
 }
 
 Kettle::Kettle(const string m) {
-	cout << "Конструктор копирования\n\n";
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ\n\n";
 	SetBodyMaterial(m.c_str());
 }
 
 Kettle::Kettle(Kettle& original) {
-	cout << "Создан конструктор\n\n";
+	cout << "РЎРѕР·РґР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ\n\n";
 	SetBodyMaterial(original.body_material);
 }
 
 Kettle::Kettle(Kettle&& original) {
-	cout << "Конструктор копирования перемещения\n";
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ\n";
 	SetBodyMaterial(original.body_material);
 }
 
 Kettle::~Kettle() {
-	cout << "Деструктор вызван\n\n";
+	cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РІС‹Р·РІР°РЅ\n\n";
 	delete[] this->body_material;
 	kettle_count--;
 };
 
 void Kettle::TurnOn() {
-	cout << "Включаем чайник\n";
-	cout << "На дисплее загорается свет, и через мгновение слышен шипящий звук, когда вода начинает нагреваться.\n";
+	cout << "Р’РєР»СЋС‡Р°РµРј С‡Р°Р№РЅРёРє\n";
+	cout << "РќР° РґРёСЃРїР»РµРµ Р·Р°РіРѕСЂР°РµС‚СЃСЏ СЃРІРµС‚, Рё С‡РµСЂРµР· РјРіРЅРѕРІРµРЅРёРµ СЃР»С‹С€РµРЅ С€РёРїСЏС‰РёР№ Р·РІСѓРє, РєРѕРіРґР° РІРѕРґР° РЅР°С‡РёРЅР°РµС‚ РЅР°РіСЂРµРІР°С‚СЊСЃСЏ.\n";
 	Sleep(500);
-	cout << "Идет процесс закипания чайника...\n";
+	cout << "РРґРµС‚ РїСЂРѕС†РµСЃСЃ Р·Р°РєРёРїР°РЅРёСЏ С‡Р°Р№РЅРёРєР°...\n";
 	Sleep(3000);
-	cout << "Чайник закепел, наливай чай на здоровье! :)\n";
+	cout << "Р§Р°Р№РЅРёРє Р·Р°РєРµРїРµР», РЅР°Р»РёРІР°Р№ С‡Р°Р№ РЅР° Р·РґРѕСЂРѕРІСЊРµ! :)\n";
 }
 
 void Kettle::TurnOff() {
-	cout << "Выключаем чайник\n";
+	cout << "Р’С‹РєР»СЋС‡Р°РµРј С‡Р°Р№РЅРёРє\n";
 }
 
 void Kettle::ConnectCordKettle() {
-	cout << "Подключаем шнур к чайнику\n";
+	cout << "РџРѕРґРєР»СЋС‡Р°РµРј С€РЅСѓСЂ Рє С‡Р°Р№РЅРёРєСѓ\n";
 }
 
 void Kettle::DisconnectCordKettle() {
-	cout << "Отсоединяем шнур от чайника\n";
+	cout << "РћС‚СЃРѕРµРґРёРЅСЏРµРј С€РЅСѓСЂ РѕС‚ С‡Р°Р№РЅРёРєР°\n";
 }
 
 void Kettle::Pour() {
-	cout << "Наливаем в чайник\n";
+	cout << "РќР°Р»РёРІР°РµРј РІ С‡Р°Р№РЅРёРє\n";
 }

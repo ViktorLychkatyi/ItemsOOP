@@ -23,13 +23,13 @@ public:
 	void SetInkAmount(int a);
 	int GetInkAmount() const;
 
-	Pen(); // конструктор без параметров
-	Pen(const char* ink_color, const double t, const double l, const string m, const int a); // конструктор с параметрами
-	void Print(); // вывод
-	Pen(const string ink_color); // конструктор преобразования
-	~Pen(); // делигирование
-	Pen(Pen& original); // конструктор копирования
-	Pen(Pen&& original); // конструктор копирования с переносом
+	Pen(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Pen(const char* ink_color, const double t, const double l, const string m, const int a); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	void Print(); // РІС‹РІРѕРґ
+	Pen(const string ink_color); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	~Pen(); // РґРµР»РёРіРёСЂРѕРІР°РЅРёРµ
+	Pen(Pen& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Pen(Pen&& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ СЃ РїРµСЂРµРЅРѕСЃРѕРј
 
 	void Write();
 	void ChangeAmpoule();

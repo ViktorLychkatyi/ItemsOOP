@@ -23,13 +23,13 @@ public:
 	void SetWaterTemperature(double t);
 	double GetWaterTemperature() const;
 
-	Kettle(); // конструктор без параметров
-	Kettle(const double c, const double p, const char* m, const string k, const double t); // конструктор с параметрами
-	void Print(); // вывод
-	Kettle(const string k); // конструктор преобразования
-	~Kettle(); // делигирование
-	Kettle(Kettle& original); // конструктор копирования
-	Kettle(Kettle&& original); // конструктор копирования с переносом
+	Kettle(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Kettle(const double c, const double p, const char* m, const string k, const double t); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	void Print(); // РІС‹РІРѕРґ
+	Kettle(const string k); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	~Kettle(); // РґРµР»РёРіРёСЂРѕРІР°РЅРёРµ
+	Kettle(Kettle& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Kettle(Kettle&& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ СЃ РїРµСЂРµРЅРѕСЃРѕРј
 
 	void TurnOn();
 	void TurnOff();

@@ -28,13 +28,13 @@ public:
 	string GetState() const;
 	int GetCount();
 
-	Banknote(); // конструктор без параметров
-	Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t); // конструктор с параметрами
-	void Print(); // вывод
-	Banknote(string denomination); // конструктор преобразования
-	~Banknote(); // делигирование
-	Banknote(const Banknote& original); // конструктор копирования
-	Banknote(const Banknote&& original); // конструктор копирования с переносом
+	Banknote(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	void Print(); // РІС‹РІРѕРґ
+	Banknote(string denomination); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	~Banknote(); // РґРµР»РёРіРёСЂРѕРІР°РЅРёРµ
+	Banknote(const Banknote& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Banknote(const Banknote&& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ СЃ РїРµСЂРµРЅРѕСЃРѕРј
 
 	void Exchange();
 	void State();

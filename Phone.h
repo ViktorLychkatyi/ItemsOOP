@@ -30,13 +30,13 @@ public:
 	void SetProcessor(string p);
 	string GetProcessor() const;
 
-	Phone(); // конструктор без параметров
-	Phone(const char* brand, const string m, const char* s, const string c, const string o, const string p); // конструктор с параметрами
-	void Print() const; // вывод
-	Phone(const string brand); // конструктор преобразования
-	~Phone(); // делигирование
-	Phone(Phone& original); // конструктор копирования
-	Phone(Phone&& original); // конструктор копирования с переносом
+	Phone(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Phone(const char* brand, const string m, const char* s, const string c, const string o, const string p); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	void Print() const; // РІС‹РІРѕРґ
+	Phone(const string brand); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	~Phone(); // РґРµР»РёРіРёСЂРѕРІР°РЅРёРµ
+	Phone(Phone& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Phone(Phone&& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ СЃ РїРµСЂРµРЅРѕСЃРѕРј
 
 	void Call();
 	void SendMessage();

@@ -26,13 +26,13 @@ public:
 	void SetYearPublication(int y);
 	int GetYearPublication() const;
 
-	Book(); // конструктор без параметров
-	Book(const char* title, const string a, const int n, const string g, const int y); // конструктор с параметрами
-	void Print(); // вывод
-	Book(const string title); // конструктор преобразования
-	~Book(); // делигирование
-	Book(Book& original); // конструктор копирования
-	Book(Book&& original); // конструктор копирования с переносом
+	Book(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ Р±РµР· РїР°СЂР°РјРµС‚СЂРѕРІ
+	Book(const char* title, const string a, const int n, const string g, const int y); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	void Print(); // РІС‹РІРѕРґ
+	Book(const string title); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїСЂРµРѕР±СЂР°Р·РѕРІР°РЅРёСЏ
+	~Book(); // РґРµР»РёРіРёСЂРѕРІР°РЅРёРµ
+	Book(Book& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	Book(Book&& original); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ СЃ РїРµСЂРµРЅРѕСЃРѕРј
 
 	void Open();
 	void Close();
