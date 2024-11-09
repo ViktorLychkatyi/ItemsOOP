@@ -1,9 +1,2 @@
-﻿  Banknote.cpp
-  Book.cpp
-  ItemsOOP.cpp
-  Kettle.cpp
-  Pen.cpp
-  Phone.cpp
-  Создание кода...
-  LINK : не найден или не выполнена сборка C:\Users\Viktor\Desktop\ItemsOOP\x64\Debug\ItemsOOP.exe при последней инкрементной компоновке; выполняется полная компоновка
+﻿  ItemsOOP.cpp
   ItemsOOP.vcxproj -> C:\Users\Viktor\Desktop\ItemsOOP\x64\Debug\ItemsOOP.exe

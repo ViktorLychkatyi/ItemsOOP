@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
@@ -39,7 +39,7 @@ int main() {
 	cout << "\n";
 
 	Kettle kettle;
-	Kettle kettle1(1.7, 2200, "Нержавеющая сталь", "Черный", 60);
+	Kettle kettle1(1.6, 2200, "Нержавеющая сталь", "Черный", 60);
 	string body_material = "Нержавеющая сталь";
 	Kettle original3 = kettle;
 	original3.SetBodyMaterial("Нержавеющая сталь");
