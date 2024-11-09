@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Banknote.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -25,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:Book.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|solutionrelative:ItemsOOP.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EFD4ECCD-92CE-43D8-A66E-9E43BE6487AE}|ItemsOOP.vcxproj|C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Kettle.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 234,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "ItemsOOP.cpp",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\ItemsOOP.cpp",
               "RelativeDocumentMoniker": "ItemsOOP.cpp",
@@ -114,11 +114,12 @@
               "RelativeToolTip": "ItemsOOP.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-08T15:11:52.614Z"
+              "WhenOpened": "2024-11-08T15:11:52.614Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Book.cpp",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.cpp",
               "RelativeDocumentMoniker": "Book.cpp",
@@ -130,7 +131,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Book.h",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Book.h",
               "RelativeDocumentMoniker": "Book.h",
@@ -142,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Banknote.h",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.h",
               "RelativeDocumentMoniker": "Banknote.h",
@@ -154,20 +155,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Banknote.cpp",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
               "RelativeDocumentMoniker": "Banknote.cpp",
               "ToolTip": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Banknote.cpp",
               "RelativeToolTip": "Banknote.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-11-08T15:10:15.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Phone.h",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.h",
               "RelativeDocumentMoniker": "Phone.h",
@@ -179,7 +180,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Phone.cpp",
               "DocumentMoniker": "C:\\Users\\Viktor\\Desktop\\ItemsOOP\\Phone.cpp",
               "RelativeDocumentMoniker": "Phone.cpp",
@@ -187,8 +188,7 @@
               "RelativeToolTip": "Phone.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-11-08T15:09:29.249Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-08T15:09:29.249Z"
             }
           ]
         }
