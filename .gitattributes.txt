@@ -1,1 +1,2 @@
 *.cpp text eol=lf
+*.cpp diff working-tree-encoding=UTF-8

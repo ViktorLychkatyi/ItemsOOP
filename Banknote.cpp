@@ -34,7 +34,7 @@ void Banknote::SetCurrency(string c) {
 		this->currency = c;
 	}
 	else {
-		throw "Неверное значение";
+		throw "РќРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ";
 	}
 	if (number <= 0) {
 		number = 100;
@@ -63,11 +63,11 @@ string Banknote::GetCountry() const {
 }
 
 void Banknote::SetState(string t) {
-	if (state == "New" || "Новое") {
+	if (state == "New" || "РќРѕРІРѕРµ") {
 		this->state = t;
 	}
 	else {
-		throw "Неверное действие";
+		throw "РќРµРІРµСЂРЅРѕРµ РґРµР№СЃС‚РІРёРµ";
 	}
 }
 
@@ -108,12 +108,12 @@ void Banknote::Print() {
 }
 
 Banknote::Banknote(string denomination) {
-	cout << "Создан конструктор\n\n";
+	cout << "РЎРѕР·РґР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ\n\n";
 	SetDenomination(denomination.c_str());
 }
 
 Banknote::Banknote(const Banknote& original) {
-	cout << "Создан конструктор\n\n";
+	cout << "РЎРѕР·РґР°РЅ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ\n\n";
 	SetDenomination(original.denomination);
 }
 
@@ -122,95 +122,95 @@ int Banknote::GetCount() {
 }
 
 Banknote::Banknote(const Banknote&& original) {
-	cout << "Конструктор копирования перемещения\n";
+	cout << "РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ РїРµСЂРµРјРµС‰РµРЅРёСЏ\n";
 	SetDenomination(original.denomination);
 }
 
 Banknote::~Banknote() {
-	cout << "Деструктор вызван\n\n";
+	cout << "Р”РµСЃС‚СЂСѓРєС‚РѕСЂ РІС‹Р·РІР°РЅ\n\n";
 	delete[] this->denomination;
 	banknote_count--;
 }
 
 void Banknote::Exchange() {
-	cout << "Обменник\n";
-	cout << "Выберите валюту которую нужно обменять\n";
-	cout << "0. Оставить как есть\n";
-	cout << "1. Доллар\n";
-	cout << "2. Евро\n";
-	cout << "3. Гривны\n";
-	cout << "Ваш выбор: ";
+	cout << "РћР±РјРµРЅРЅРёРє\n";
+	cout << "Р’С‹Р±РµСЂРёС‚Рµ РІР°Р»СЋС‚Сѓ РєРѕС‚РѕСЂСѓСЋ РЅСѓР¶РЅРѕ РѕР±РјРµРЅСЏС‚СЊ\n";
+	cout << "0. РћСЃС‚Р°РІРёС‚СЊ РєР°Рє РµСЃС‚СЊ\n";
+	cout << "1. Р”РѕР»Р»Р°СЂ\n";
+	cout << "2. Р•РІСЂРѕ\n";
+	cout << "3. Р“СЂРёРІРЅС‹\n";
+	cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 	cin >> choice;
 	switch (choice) {
 		case 0:
 			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы решили оставить как есть\n";
+				cout << "Р’С‹ СЂРµС€РёР»Рё РѕСЃС‚Р°РІРёС‚СЊ РєР°Рє РµСЃС‚СЊ\n";
 			}
 			break;
 		case 1:
 			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Доллар\n";
-				cout << "Текущая сумма: " << number << " " << "USD" << "\n";
+				cout << "Р’С‹ РѕР±РјРµРЅСЏР»Рё РЅР° Р”РѕР»Р»Р°СЂ\n";
+				cout << "РўРµРєСѓС‰Р°СЏ СЃСѓРјРјР°: " << number << " " << "USD" << "\n";
 			}
 			break;
 		case 2:
 			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Евро\n";
-				cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
+				cout << "Р’С‹ РѕР±РјРµРЅСЏР»Рё РЅР° Р•РІСЂРѕ\n";
+				cout << "РўРµРєСѓС‰Р°СЏ СЃСѓРјРјР°: " << number << " " << "EURO" << "\n";
 			}
 			break;
 		case 3:
 			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Гривну\n";
-				cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
+				cout << "Р’С‹ РѕР±РјРµРЅСЏР»Рё РЅР° Р“СЂРёРІРЅСѓ\n";
+				cout << "РўРµРєСѓС‰Р°СЏ СЃСѓРјРјР°: " << number << " " << "UAH" << "\n";
 			}
 			break;
 		default:
-			cout << "Неверный ввод";
+			cout << "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ";
 	}
 }
 
 void Banknote::State() {
-	cout << "Ваша купюра выглядит новым\n";
+	cout << "Р’Р°С€Р° РєСѓРїСЋСЂР° РІС‹РіР»СЏРґРёС‚ РЅРѕРІС‹Рј\n";
 }
 
 void Banknote::CurrencyInfo() {
-	cout << "Номинация: " << denomination << "\n";
-	cout << "Валюта: " << number << " " << currency << "\n";
-	cout << "Серийный номер: " << serial_number << "\n";
-	cout << "Страна: " << country << "\n";
-	cout << "Состояние: " << country << "\n";
+	cout << "РќРѕРјРёРЅР°С†РёСЏ: " << denomination << "\n";
+	cout << "Р’Р°Р»СЋС‚Р°: " << number << " " << currency << "\n";
+	cout << "РЎРµСЂРёР№РЅС‹Р№ РЅРѕРјРµСЂ: " << serial_number << "\n";
+	cout << "РЎС‚СЂР°РЅР°: " << country << "\n";
+	cout << "РЎРѕСЃС‚РѕСЏРЅРёРµ: " << country << "\n";
 }
 
 void Banknote::Buy() {
-	cout << "Покупка\n";
-	cout << "Выберите что вы хотите купить:\n";
-	cout << "0. Оставить как есть\n";
-	cout << "1. Купить товар за 100\n";
-	cout << "2. Купить товар за 50\n";
-	cout << "2. Купить товар за 80\n";
-	cout << "Ваш выбор: ";
+	cout << "РџРѕРєСѓРїРєР°\n";
+	cout << "Р’С‹Р±РµСЂРёС‚Рµ С‡С‚Рѕ РІС‹ С…РѕС‚РёС‚Рµ РєСѓРїРёС‚СЊ:\n";
+	cout << "0. РћСЃС‚Р°РІРёС‚СЊ РєР°Рє РµСЃС‚СЊ\n";
+	cout << "1. РљСѓРїРёС‚СЊ С‚РѕРІР°СЂ Р·Р° 100\n";
+	cout << "2. РљСѓРїРёС‚СЊ С‚РѕРІР°СЂ Р·Р° 50\n";
+	cout << "2. РљСѓРїРёС‚СЊ С‚РѕРІР°СЂ Р·Р° 80\n";
+	cout << "Р’Р°С€ РІС‹Р±РѕСЂ: ";
 	cin >> choice;
 	switch (choice) {
 	case 0:
 		if (currency == "USD" || "EURO" || "UAH") {
-			cout << "Вы решили оставить как есть\n";
+			cout << "Р’С‹ СЂРµС€РёР»Рё РѕСЃС‚Р°РІРёС‚СЊ РєР°Рє РµСЃС‚СЊ\n";
 		}
 		break;
 	case 1:
 		if (currency == "USD" || "EURO" || "UAH") {
 			if (number >= 100) {
 				number -= 100;
-				cout << "Вы купили товар за 100\n";
+				cout << "Р’С‹ РєСѓРїРёР»Рё С‚РѕРІР°СЂ Р·Р° 100\n";
 			}
-			cout << "У вас нет купюры\n";
+			cout << "РЈ РІР°СЃ РЅРµС‚ РєСѓРїСЋСЂС‹\n";
 		}
 		break;
 	case 2:
 		if (currency == "USD" || "EURO" || "UAH") {
 			if (number >= 50) {
 				number -= 50;
-				cout << "Вы купили товар за 100\n";
+				cout << "Р’С‹ РєСѓРїРёР»Рё С‚РѕРІР°СЂ Р·Р° 100\n";
 			}
 			cout << number << " " << currency << "\n";
 		}
@@ -219,16 +219,16 @@ void Banknote::Buy() {
 		if (currency == "USD" || "EURO" || "UAH") {
 			if (number >= 80) {
 				number -= 80;
-				cout << "Вы купили товар за 100\n";
+				cout << "Р’С‹ РєСѓРїРёР»Рё С‚РѕРІР°СЂ Р·Р° 100\n";
 			}
 			cout << number << " " << currency << "\n";
 		}
 		break;
 	default:
-		cout << "Неверный ввод";
+		cout << "РќРµРІРµСЂРЅС‹Р№ РІРІРѕРґ";
 	}
 }
 
 void Banknote::Touch() {
-	cout << "Протерев купюру пальцами, услышали мягкий шелест, как шуршание осенних листьев.\n";
+	cout << "РџСЂРѕС‚РµСЂРµРІ РєСѓРїСЋСЂСѓ РїР°Р»СЊС†Р°РјРё, СѓСЃР»С‹С€Р°Р»Рё РјСЏРіРєРёР№ С€РµР»РµСЃС‚, РєР°Рє С€СѓСЂС€Р°РЅРёРµ РѕСЃРµРЅРЅРёС… Р»РёСЃС‚СЊРµРІ.\n";
 }
