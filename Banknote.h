@@ -9,9 +9,8 @@ private:
 	string serial_number;
 	string country;
 	string state;
-
 	int choice;
-	int banknote_count = 0;
+	static int banknote_count;
 
 public:
 	void SetDenomination(const char* denomination);
@@ -26,15 +25,15 @@ public:
 	string GetCountry() const;
 	void SetState(string t);
 	string GetState() const;
-	int GetCount();
 
 	Banknote(); // конструктор без параметров
 	Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t); // конструктор с параметрами
 	void Print(); // вывод
 	Banknote(string denomination); // конструктор преобразования
 	~Banknote(); // делигирование
-	Banknote(const Banknote& original); // конструктор копирования
-	Banknote(const Banknote&& original); // конструктор копирования с переносом
+	Banknote(const Banknote& other_banknote); // конструктор копирования
+	static int GetCount(); // подсчет кол. объектов
+	void Result() const; // вывод для копирования конструктура
 
 	void Exchange();
 	void State();

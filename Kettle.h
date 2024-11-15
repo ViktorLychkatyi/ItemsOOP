@@ -8,8 +8,7 @@ private:
 	char* body_material;
 	string color;
 	double water_temperature;
-
-	int kettle_count = 0;
+	static int kettle_count;
 
 public:
 	void SetCapacity(double c);
@@ -29,7 +28,8 @@ public:
 	Kettle(const string k); // конструктор преобразования
 	~Kettle(); // делигирование
 	Kettle(Kettle& original); // конструктор копирования
-	Kettle(Kettle&& original); // конструктор копирования с переносом
+	static int GetCount(); // подсчет кол. объектов
+	void Result() const; // вывод для копирования конструктура
 
 	void TurnOn();
 	void TurnOff();

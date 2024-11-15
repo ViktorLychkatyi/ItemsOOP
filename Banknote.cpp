@@ -107,29 +107,36 @@ void Banknote::Print() {
 	cout << "\n";
 }
 
-Banknote::Banknote(string denomination) {
-	cout << "Создан конструктор\n\n";
-	SetDenomination(denomination.c_str());
-}
-
-Banknote::Banknote(const Banknote& original) {
-	cout << "Создан конструктор\n\n";
-	SetDenomination(original.denomination);
+Banknote::Banknote(const Banknote& other_banknote) {
+	cout << "Конструктор копирования вызван" << "\n\n";
+	SetDenomination(other_banknote.denomination);
+	SetNubmer(other_banknote.number);
+	SetCurrency(other_banknote.currency);
+	SetSerialNumber(other_banknote.serial_number);
+	SetCountry(other_banknote.country);
+	SetState(other_banknote.state);
 }
 
 int Banknote::GetCount() {
 	return banknote_count;
 }
 
-Banknote::Banknote(const Banknote&& original) {
-	cout << "Конструктор копирования перемещения\n";
-	SetDenomination(original.denomination);
-}
+int Banknote::banknote_count = 0;
 
 Banknote::~Banknote() {
 	cout << "Деструктор вызван\n\n";
 	delete[] this->denomination;
 	banknote_count--;
+}
+
+void Banknote::Result() const {
+	cout << this->denomination << "\n";
+	cout << this->number << "\n";
+	cout << this->currency << "\n";
+	cout << this->serial_number << "\n";
+	cout << this->country << "\n";
+	cout << this->state << "\n";
+	cout << "\n";
 }
 
 void Banknote::Exchange() {

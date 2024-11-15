@@ -88,26 +88,36 @@ Pen::Pen(const char* ink_color, const double t, const double l, const string m, 
 	pen_count++;
 }
 
-Pen::Pen(const string ink_color) {
-	cout << "Конструктор копирования\n\n";
-	SetBodyMaterial(ink_color.c_str());
+Pen::Pen(const Pen& other_pen) {
+	cout << "Конструктор копирования вызван" << "\n\n";
+	SetInkColor(other_pen.ink_color);
+	SetPenThickness(other_pen.pen_thickness);
+	SetPenLength(other_pen.pen_length);
+	SetBodyMaterial(other_pen.body_material);
+	SetInkAmount(other_pen.ink_amount);
 }
 
-Pen::Pen(Pen& original) {
-	cout << "Создан конструктор\n\n";
-	SetBodyMaterial(original.ink_color);
+int Pen::GetCount() {
+	return pen_count;
 }
 
-Pen::Pen(Pen&& original) {
-	cout << "Создан конструктор\n\n";
-	SetBodyMaterial(original.ink_color);
-}
+int Pen::pen_count = 0;
 
 Pen::~Pen() {
 	cout << "Деструктор вызван\n\n";
 	delete[] this->ink_color;
 	pen_count--;
 }
+
+void Pen::Result() const {
+	cout << this->ink_color << "\n";
+	cout << this->pen_thickness << "\n";
+	cout << this->pen_length << "\n";
+	cout << this->body_material << "\n";
+	cout << this->ink_amount << "\n";
+	cout << "\n";
+}
+
 
 void Pen::Write() {
 	while (true) {

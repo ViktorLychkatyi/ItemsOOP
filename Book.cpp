@@ -78,21 +78,31 @@ Book::Book(const string title) {
     SetTitle(title.c_str());
 }
 
-Book::Book(Book& original) {
+Book::Book(Book& other_book) {
     cout << "Конструктор копирования\n\n";
-    SetTitle(original.title);
-}
-
-Book::Book(Book&& original) {
-    cout << "Конструктор копирования перемещения\n";
-    SetTitle(original.title);
+    SetTitle(other_book.title);
 }
 
 Book::~Book() {
     cout << "Деструктор вызван\n\n";
     delete[] this->title;
     book_count--;
-};
+}
+
+int Book::GetCount() {
+    return book_count;
+}
+
+int Book::book_count = 0;
+
+void Book::Result() const {
+    cout << this->title << "\n";
+    cout << this->author << "\n";
+    cout << this->number_pages << "\n";
+    cout << this->genre << "\n";
+    cout << this->year_publication << "\n";
+    cout << "\n";
+}
 
 void Book::Open() {
     cout << "Вы открыли книгу\n";

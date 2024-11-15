@@ -88,18 +88,17 @@ Kettle::Kettle(const double c, const double p, const char* m, const string k, co
 	kettle_count++;
 }
 
-Kettle::Kettle(const string m) {
-	cout << "Конструктор копирования\n\n";
-	SetBodyMaterial(m.c_str());
+void Kettle::Result() const {
+	cout << this->capacity << "\n";
+	cout << this->power << "\n";
+	cout << this->body_material << "\n";
+	cout << this->color << "\n";
+	cout << this->water_temperature << "\n";
+	cout << "\n";
 }
 
 Kettle::Kettle(Kettle& original) {
-	cout << "Создан конструктор\n\n";
-	SetBodyMaterial(original.body_material);
-}
-
-Kettle::Kettle(Kettle&& original) {
-	cout << "Конструктор копирования перемещения\n";
+	cout << "Создан конструктор копирования\n\n";
 	SetBodyMaterial(original.body_material);
 }
 
@@ -107,7 +106,13 @@ Kettle::~Kettle() {
 	cout << "Деструктор вызван\n\n";
 	delete[] this->body_material;
 	kettle_count--;
-};
+}
+
+int Kettle::GetCount() {
+	return kettle_count;
+}
+
+int Kettle::kettle_count = 0;
 
 void Kettle::TurnOn() {
 	cout << "Включаем чайник\n";

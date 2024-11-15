@@ -8,8 +8,7 @@ private:
 	double pen_length;
 	string body_material;
 	int ink_amount;
-
-	int pen_count = 0;
+	static int pen_count;
 
 public:
 	void SetInkColor(const char* ink_color);
@@ -22,14 +21,15 @@ public:
 	string GetBodyMaterial() const;
 	void SetInkAmount(int a);
 	int GetInkAmount() const;
-
+	
 	Pen(); // конструктор без параметров
 	Pen(const char* ink_color, const double t, const double l, const string m, const int a); // конструктор с параметрами
 	void Print(); // вывод
 	Pen(const string ink_color); // конструктор преобразования
 	~Pen(); // делигирование
-	Pen(Pen& original); // конструктор копирования
-	Pen(Pen&& original); // конструктор копирования с переносом
+	Pen(const Pen& other_pen); // конструктор копирования
+	static int GetCount(); // подсчет кол. объектов
+	void Result() const; // вывод для копирования конструктура
 
 	void Write();
 	void ChangeAmpoule();

@@ -1,2 +1,4 @@
-﻿  ItemsOOP.cpp
-  ItemsOOP.vcxproj -> C:\Users\Viktor\Desktop\ItemsOOP\x64\Debug\ItemsOOP.exe
+﻿ItemsOOP.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Banknote::Banknote(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Banknote@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) в функции main.
+ItemsOOP.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Kettle::Kettle(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Kettle@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) в функции main.
+ItemsOOP.obj : error LNK2019: ссылка на неразрешенный внешний символ "public: __cdecl Pen::Pen(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (??0Pen@@QEAA@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z) в функции main.
+C:\Users\Viktor\Desktop\ItemsOOP\x64\Debug\ItemsOOP.exe : fatal error LNK1120: неразрешенных внешних элементов: 3

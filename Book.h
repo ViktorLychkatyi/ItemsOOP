@@ -8,11 +8,10 @@ private:
 	int number_pages;
 	string genre;
 	int year_publication;
-
 	int choice;
 	int page = 1;
 	string text;
-	int book_count = 0;
+	static int book_count;
 
 public:
 	void SetTitle(const char* title);
@@ -25,14 +24,15 @@ public:
 	string GetGenre() const;
 	void SetYearPublication(int y);
 	int GetYearPublication() const;
-
+	
 	Book(); // конструктор без параметров
 	Book(const char* title, const string a, const int n, const string g, const int y); // конструктор с параметрами
 	void Print(); // вывод
 	Book(const string title); // конструктор преобразования
 	~Book(); // делигирование
-	Book(Book& original); // конструктор копирования
-	Book(Book&& original); // конструктор копирования с переносом
+	Book(Book& other_book); // конструктор копирования
+	static int GetCount(); // подсчет кол. объектов
+	void Result() const; // вывод для копирования конструктура
 
 	void Open();
 	void Close();
