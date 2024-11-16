@@ -62,12 +62,6 @@ void Phone::Print() const {
 	cout << "\n";
 }
 
-int Phone::GetCount() {
-	return phone_count;
-}
-
-int Phone::phone_count = 0;
-
 Phone::Phone() {
 	SetBrand("Samsung");
 	SetModel("Galaxy A55");
@@ -90,13 +84,31 @@ Phone::Phone(const char* brand, const string m, const int s, const string c, con
 	phone_count++;
 }
 
-Phone::Phone(const string m) : model(m) {
-	cout << "Конструктор преобразования вызыван" << "\n\n";
-	cout << "Вывод: " << model << "\n";
+Phone::Phone(const string model) {
+	this->model = model;
+	cout << "Конструктор преобразования вызван" << "\n";
+	cout << this->model << "\n\n";
+	phone_count++;
 }
 
 void Phone::Display() const {
 	cout << "Память: " << memory_size << " GB\n\n";
+}
+
+Phone::Phone(const Phone& other_phone) {
+	cout << "Конструктор копирования вызван" << "\n\n";
+	SetBrand(other_phone.brand);
+	SetModel(other_phone.model);
+	SetMemorySize(other_phone.memory_size);
+	SetColor(other_phone.color);
+	SetOperatingSystem(other_phone.operating_system);
+	SetProcessor(other_phone.proccesor);
+	phone_count++;
+}
+
+Phone::~Phone() {
+	delete[] this->brand;
+	phone_count--;
 }
 
 void Phone::Result() const {
@@ -109,21 +121,11 @@ void Phone::Result() const {
 	cout << "\n";
 }
 
-Phone::~Phone() {
-	cout << "Деструктор вызван\n\n";
-	delete[] this->brand;
-	phone_count--;
+int Phone::GetCount() {
+	return phone_count;
 }
 
-Phone::Phone(const Phone& other_phone) {
-	cout << "Конструктор копирования вызван" << "\n\n";
-	SetBrand(other_phone.brand);
-	SetModel(other_phone.model);
-	SetMemorySize(other_phone.memory_size);
-	SetColor(other_phone.color);
-	SetOperatingSystem(other_phone.operating_system);
-	SetProcessor(other_phone.proccesor);
-}
+int Phone::phone_count = 0;
 
 Phone::Phone(int s) {
 	SetMemorySize(s);
@@ -131,9 +133,7 @@ Phone::Phone(int s) {
 }
 
 Phone Phone::operator + (const Phone& other_phone) const {
-	Phone result(*this);
-	result.memory_size += other_phone.memory_size;
-	return result;
+	return Phone(memory_size + other_phone.memory_size);
 }
 
 bool Phone::operator > (const Phone& other_phone) const {
@@ -153,40 +153,13 @@ bool Phone::operator != (const Phone& other_phone) const {
 }
 
 const ostream& operator << (ostream& i, const Phone& phone) {
-	cout << "Бренд: " << phone.GetBrand() << "\n";
-	cout << "Модель: " << phone.GetModel() << "\n";
-	cout << "Память: " << phone.GetMemorySize() << " GB\n";
-	cout << "Цвет: " << phone.GetColor() << "\n";
-	cout << "Операционная система: " << phone.GetOperatingSystem() << "\n";
-	cout << "Processor: " << phone.GetProcessor() << "\n";
+	i << phone.memory_size;
 	return i;
 }
 
-const istream& operator >> (istream& i, Phone& phone) {
-	cout << "Бренд: ";
-	cin >> phone.brand;
-	cout << "\n";
-
-	cout << "Модель: ";
-	cin >> phone.model;
-	cout << "\n";
-
-	cout << "Память: ";
-	cin >> phone.memory_size;
-	cout << "\n";
-
-	cout << "Цвет: ";
-	cin >> phone.color;
-	cout << "\n";
-
-	cout << "Операционная система: ";
-	cin >> phone.operating_system;
-	cout << "\n";
-
-    cout << "Процессор: ";
-	cin >> phone.proccesor;
-	cout << "\n";
-    return i;
+const istream& operator >> (istream& o, const Phone& phone) {
+	o >> phone.memory_size;
+	return o;
 }
 
 void Phone::Call() {
@@ -321,7 +294,7 @@ void Phone::Photo() {
 }
 
 void Phone::TurnOn() {
-	cout << "Вы удерживаете пальцем кнопку для включения телефона\n";
+	cout << "\nВы удерживаете пальцем кнопку для включения телефона\n";
 	Sleep(1000);
 	cout << "Включили телефон\n";
 	Sleep(500);

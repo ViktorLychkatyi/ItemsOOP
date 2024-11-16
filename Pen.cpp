@@ -68,6 +68,13 @@ void Pen::Print() {
 	cout << "\n";
 }
 
+Pen::Pen(const string body_material) {
+	this->body_material = body_material;
+	cout << "Конструктор преобразования вызван" << "\n";
+	cout << this->body_material << "\n\n";
+	pen_count++;
+}
+
 Pen::Pen() {
 	SetInkColor("Синий");
 	SetPenThickness(0.5);
@@ -97,18 +104,6 @@ Pen::Pen(const Pen& other_pen) {
 	SetInkAmount(other_pen.ink_amount);
 }
 
-int Pen::GetCount() {
-	return pen_count;
-}
-
-int Pen::pen_count = 0;
-
-Pen::~Pen() {
-	cout << "Деструктор вызван\n\n";
-	delete[] this->ink_color;
-	pen_count--;
-}
-
 void Pen::Result() const {
 	cout << this->ink_color << "\n";
 	cout << this->pen_thickness << "\n";
@@ -118,6 +113,51 @@ void Pen::Result() const {
 	cout << "\n";
 }
 
+Pen::~Pen() {
+	delete[] this->ink_color;
+	pen_count--;
+}
+
+int Pen::GetCount() {
+	return pen_count;
+}
+
+int Pen::pen_count = 0;
+
+Pen::Pen(int a) {
+	SetInkAmount(a);
+	pen_count++;
+}
+
+Pen Pen::operator + (const Pen& other_pen) const {
+	return Pen(ink_amount + other_pen.ink_amount);
+}
+
+bool Pen::operator > (const Pen& other_pen) const {
+	return this->ink_amount > other_pen.ink_amount;
+}
+
+bool Pen::operator < (const Pen& other_pen) const {
+	return this->ink_amount < other_pen.ink_amount;
+}
+
+bool Pen::operator == (const Pen& other_pen) const {
+	return this->ink_amount == other_pen.ink_amount;
+}
+
+bool Pen::operator != (const Pen& other_pen) const {
+	return this->ink_amount != other_pen.ink_amount;
+}
+
+const ostream& operator << (ostream& i, const Pen& pen) {
+	i << pen.ink_amount;
+	return i;
+}
+
+const istream& operator >> (istream& o, const Pen& pen) {
+	o >> pen.ink_amount;
+	return o;
+}
 
 void Pen::Write() {
 	while (true) {

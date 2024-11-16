@@ -22,16 +22,16 @@ int Banknote::GetNumber() const {
 
 void Banknote::SetCurrency(string c) {
 	if (currency == "USD" || "EURO" || "UAH") {
-		if (number == 1)
-		if (number == 2)
-		if (number == 5)
-		if (number == 10)
-		if (number == 20)
-		if (number == 50)
-		if (number == 100)
-		if (number == 200)
-		if (number == 500)
-		this->currency = c;
+	if (number == 1)
+	if (number == 2)
+	if (number == 5)
+	if (number == 10)
+	if (number == 20)
+	if (number == 50)
+	if (number == 100)
+	if (number == 200)
+	if (number == 500)
+	this->currency = c;
 	}
 	else {
 		throw "Неверное значение";
@@ -107,6 +107,13 @@ void Banknote::Print() {
 	cout << "\n";
 }
 
+Banknote::Banknote(const string currency) {
+	this->currency = currency;
+	cout << "Конструктор преобразования вызван" << "\n";
+	cout << this->currency << "\n\n";
+	banknote_count++;
+}
+
 Banknote::Banknote(const Banknote& other_banknote) {
 	cout << "Конструктор копирования вызван" << "\n\n";
 	SetDenomination(other_banknote.denomination);
@@ -115,16 +122,10 @@ Banknote::Banknote(const Banknote& other_banknote) {
 	SetSerialNumber(other_banknote.serial_number);
 	SetCountry(other_banknote.country);
 	SetState(other_banknote.state);
+	banknote_count++;
 }
-
-int Banknote::GetCount() {
-	return banknote_count;
-}
-
-int Banknote::banknote_count = 0;
 
 Banknote::~Banknote() {
-	cout << "Деструктор вызван\n\n";
 	delete[] this->denomination;
 	banknote_count--;
 }
@@ -139,6 +140,47 @@ void Banknote::Result() const {
 	cout << "\n";
 }
 
+int Banknote::GetCount() {
+	return banknote_count;
+}
+
+int Banknote::banknote_count = 0;
+
+Banknote::Banknote(int n) {
+	SetNubmer(n);
+	banknote_count++;
+}
+
+Banknote Banknote::operator + (const Banknote& other_banknote) const {
+	return Banknote(number + other_banknote.number);
+}
+
+bool Banknote::operator > (const Banknote& other_banknote) const {
+	return this->number > other_banknote.number;
+}
+
+bool Banknote::operator < (const Banknote& other_banknote) const {
+	return this->number < other_banknote.number;
+}
+
+bool Banknote::operator == (const Banknote& other_banknote) const {
+	return this->number == other_banknote.number;
+}
+
+bool Banknote::operator != (const Banknote& other_banknote) const {
+	return this->number != other_banknote.number;
+}
+
+const ostream& operator << (ostream& i, const Banknote& banknote) {
+	i << banknote.number;
+	return i;
+}
+
+const istream& operator >> (istream& o, const Banknote& banknote) {
+	o >> banknote.number;
+	return o;
+}
+
 void Banknote::Exchange() {
 	cout << "Обменник\n";
 	cout << "Выберите валюту которую нужно обменять\n";
@@ -149,31 +191,31 @@ void Banknote::Exchange() {
 	cout << "Ваш выбор: ";
 	cin >> choice;
 	switch (choice) {
-		case 0:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы решили оставить как есть\n";
-			}
-			break;
-		case 1:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Доллар\n";
-				cout << "Текущая сумма: " << number << " " << "USD" << "\n";
-			}
-			break;
-		case 2:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Евро\n";
-				cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
-			}
-			break;
-		case 3:
-			if (currency == "USD" || "EURO" || "UAH") {
-				cout << "Вы обменяли на Гривну\n";
-				cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
-			}
-			break;
-		default:
-			cout << "Неверный ввод";
+	case 0:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы решили оставить как есть\n";
+		}
+		break;
+	case 1:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Доллар\n";
+			cout << "Текущая сумма: " << number << " " << "USD" << "\n";
+		}
+		break;
+	case 2:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Евро\n";
+			cout << "Текущая сумма: " << number << " " << "EURO" << "\n";
+		}
+		break;
+	case 3:
+		if (currency == "USD" || "EURO" || "UAH") {
+			cout << "Вы обменяли на Гривну\n";
+			cout << "Текущая сумма: " << number << " " << "UAH" << "\n";
+		}
+		break;
+	default:
+		cout << "Неверный ввод";
 	}
 }
 

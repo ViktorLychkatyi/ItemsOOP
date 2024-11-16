@@ -25,11 +25,20 @@ public:
 	Kettle(); // конструктор без параметров
 	Kettle(const double c, const double p, const char* m, const string k, const double t); // конструктор с параметрами
 	void Print(); // вывод
-	Kettle(const string k); // конструктор преобразования
+	Kettle(const string color); // конструктор преобразования
 	~Kettle(); // делигирование
-	Kettle(Kettle& original); // конструктор копирования
+	Kettle(const Kettle& other_kettle); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
+	Kettle(double c);
+
+	Kettle operator + (const Kettle& other_kettle) const;
+	bool operator > (const Kettle& other_kettle) const;
+	bool operator < (const Kettle& other_kettle) const;
+	bool operator == (const Kettle& other_kettle) const;
+	bool operator != (const Kettle& other_kettle) const;
+	friend const ostream& operator << (ostream& i, const Kettle& kettle);
+	friend const istream& operator >> (istream& i, const Kettle& kettle);
 
 	void TurnOn();
 	void TurnOff();

@@ -29,11 +29,20 @@ public:
 	Banknote(); // конструктор без параметров
 	Banknote(const char* denomination, const int n, const string c, const string s, const string k, const string t); // конструктор с параметрами
 	void Print(); // вывод
-	Banknote(string denomination); // конструктор преобразования
+	Banknote(const string currency); // конструктор преобразования
 	~Banknote(); // делигирование
 	Banknote(const Banknote& other_banknote); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
+	Banknote(int n);
+
+	Banknote operator + (const Banknote& other_banknote) const;
+	bool operator > (const Banknote& other_banknote) const;
+	bool operator < (const Banknote& other_banknote) const;
+	bool operator == (const Banknote& other_banknote) const;
+	bool operator != (const Banknote& other_banknote) const;
+	friend const ostream& operator << (ostream& i, const Banknote& banknote);
+	friend const istream& operator >> (istream& i, const Banknote& banknote);
 
 	void Exchange();
 	void State();

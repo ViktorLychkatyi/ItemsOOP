@@ -73,27 +73,27 @@ void Book::Print() {
     cout << "\n";
 }
 
-Book::Book(const string title) {
-    cout << "Создан конструктор\n\n";
-    SetTitle(title.c_str());
+Book::Book(const string author) {
+    this->author = author;
+    cout << "Конструктор преобразования вызван" << "\n";
+    cout << this->author << "\n\n";
+    book_count++;
 }
 
-Book::Book(Book& other_book) {
-    cout << "Конструктор копирования\n\n";
+Book::Book(const Book& other_book) {
+    cout << "Конструктор копирования вызван" << "\n\n";
     SetTitle(other_book.title);
+    SetAuthor(other_book.author);
+    SetNumberPages(other_book.number_pages);
+    SetGenre(other_book.genre);
+    SetYearPublication(other_book.year_publication);
+    book_count++;
 }
 
 Book::~Book() {
-    cout << "Деструктор вызван\n\n";
     delete[] this->title;
     book_count--;
 }
-
-int Book::GetCount() {
-    return book_count;
-}
-
-int Book::book_count = 0;
 
 void Book::Result() const {
     cout << this->title << "\n";
@@ -102,6 +102,47 @@ void Book::Result() const {
     cout << this->genre << "\n";
     cout << this->year_publication << "\n";
     cout << "\n";
+}
+
+int Book::GetCount() {
+    return book_count;
+}
+
+int Book::book_count = 0;
+
+Book::Book(int n) {
+    SetNumberPages(n);
+    book_count++;
+}
+
+Book Book::operator + (const Book& other_book) const {
+    return Book(number_pages + other_book.number_pages);
+}
+
+bool Book::operator > (const Book& other_book) const {
+    return this->number_pages > other_book.number_pages;
+}
+
+bool Book::operator < (const Book& other_book) const {
+    return this->number_pages < other_book.number_pages;
+}
+
+bool Book::operator == (const Book& other_book) const {
+    return this->number_pages == other_book.number_pages;
+}
+
+bool Book::operator != (const Book& other_book) const {
+    return this->number_pages != other_book.number_pages;
+}
+
+const ostream& operator << (ostream& i, const Book& book) {
+    i << book.number_pages;
+    return i;
+}
+
+const istream& operator >> (istream& o, const Book& book) {
+    o >> book.number_pages;
+    return o;
 }
 
 void Book::Open() {

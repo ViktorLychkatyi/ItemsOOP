@@ -30,7 +30,30 @@ int main() {
 	Phone phone4;
 	cout << Phone::GetCount() << "\n";
 	Phone phone5;
-	
+
+	Phone memory1;
+	Phone memory2;
+	Phone memory_result = memory1 + memory2;
+
+	cout << "Напишите память для вашего смартфона: ";
+	cin >> memory1;
+	cout << "Напишите дополнительную память для вашего смартфона: ";
+	cin >> memory2;
+	cout << "Ваша общая память смартфона будет: " << memory_result << " ГБ\n";
+
+	if (memory1 > memory2) {
+		cout << memory1 << " ГБ" << " имеет больше памяти чем " << memory2 << " ГБ\n";
+	}
+	else if (memory1 < memory2) {
+		cout << memory1 << " ГБ" << " имеет меньше памяти чем " << memory2 << " ГБ\n";
+	}
+	else if (memory1 == memory2) {
+		cout << memory1 << " ГБ" << " и " << memory2 << " ГБ" << " имеют одинаковый объем памяти\n";
+	}
+	else if (memory1 != memory2) {
+		cout << memory1 << " ГБ" << " и " << memory2 << " ГБ" << " не имеют одинаковый объем памяти\n";
+	}
+
 	phone.TurnOn();
 	phone.Call();
 	phone.SendMessage();
@@ -40,19 +63,15 @@ int main() {
 	phone.TurnOff();
 	cout << "\n";
 
-	Phone memory(256);
-	Phone memory2(256);
-	Phone result = memory + memory2;
-	result.Display();
-
 	// ===
 
 	Banknote banknote;
 	Banknote banknote1("The United of States", 100, "USD", "KBJ46279860IB2", "USA", "New");
-	Banknote banknote2("USD");
+	Banknote banknote2("The United of States", 50, "USD", "KBJ46279860IB2", "USA", "New");
+	Banknote banknote3("USD");
 
 	Banknote other_banknote;
-	other_banknote.SetDenomination("Samsung");
+	other_banknote.SetDenomination("The United of States");
 	other_banknote.SetNubmer(100);
 	other_banknote.SetCurrency("USD");
 	other_banknote.SetSerialNumber("KBJ46279860IB2");
@@ -62,11 +81,24 @@ int main() {
 	copy_banknote.Result();
 
 	cout << Banknote::GetCount() << "\n";
-	Banknote banknote3;
-	cout << Banknote::GetCount() << "\n";
 	Banknote banknote4;
 	cout << Banknote::GetCount() << "\n";
 	Banknote banknote5;
+	cout << Banknote::GetCount() << "\n";
+	Banknote banknote6;
+
+	if (banknote1 > banknote2) {
+		cout << banknote1 << " USD" << " имеет больше валюты чем " << banknote2 << " USD\n";
+	}
+	else if (banknote1 < banknote2) {
+		cout << banknote1 << " USD" << " имеет меньше валюты чем " << banknote2 << " USD\n";
+	}
+	else if (banknote1 == banknote2) {
+		cout << banknote1 << " USD" << " и " << banknote2 << " USD" << " имеют одинаковые валюты\n";
+	}
+	else if (banknote1 != banknote2) {
+		cout << banknote1 << " USD" << " и " << banknote2 << " USD" << " не имеют одинаковых валюты\n";
+	}
 
 	banknote.Exchange();
 	banknote.State();
@@ -79,7 +111,8 @@ int main() {
 
 	Kettle kettle;
 	Kettle kettle1(1.7, 2200, "Нержавеющая сталь", "Черный", 60);
-	Kettle kettle2("Нержавеющая сталь");
+	Kettle kettle2(2.4, 2500, "Нержавеющая сталь", "Черный", 70);
+	Kettle kettle3("Нержавеющая сталь");
 
 	Kettle other_kettle;
 	other_kettle.SetCapacity(1.7);
@@ -91,11 +124,24 @@ int main() {
 	copy_kettle.Result();
 
 	cout << Kettle::GetCount() << "\n";
-	Kettle kettle3;
-	cout << Kettle::GetCount() << "\n";
 	Kettle kettle4;
 	cout << Kettle::GetCount() << "\n";
 	Kettle kettle5;
+	cout << Kettle::GetCount() << "\n";
+	Kettle kettle6;
+
+	if (kettle1 > kettle2) {
+		cout << kettle1 << " л." << " имеет больше литров чем " << kettle2 << " л.\n";
+	}
+	else if (kettle1 < kettle2) {
+		cout << kettle1 << " л." << " имеет меньше литров чем " << kettle2 << " л.\n";
+	}
+	else if (kettle1 == kettle2) {
+		cout << kettle1 << " л." << " и " << kettle2 << " л." << " имеют одинаковые литры\n";
+	}
+	else if (kettle1 != kettle2) {
+		cout << kettle1 << " л." << " и " << kettle2 << " л." << " не имеют одинаковых литров\n";
+	}
 
 	kettle.TurnOn();
 	kettle.TurnOff();
@@ -108,7 +154,8 @@ int main() {
 
 	Pen pen;
 	Pen pen1("Синий", 0.5, 140, "Пластик", 100);
-	Pen pen2("Синий");
+	Pen pen2("Синий", 0.5, 140, "Пластик", 60);
+	Pen pen3("Синий");
 
 	Pen other_pen;
 	other_pen.SetInkColor("Синий");
@@ -120,11 +167,24 @@ int main() {
 	copy_pen.Result();
 
 	cout << Pen::GetCount() << "\n";
-	Pen pen3;
-	cout << Pen::GetCount() << "\n";
 	Pen pen4;
 	cout << Pen::GetCount() << "\n";
 	Pen pen5;
+	cout << Pen::GetCount() << "\n";
+	Pen pen6;
+
+	if (pen1 > pen2) {
+		cout << pen1 << "% чернил" << " имеет больше чем " << pen2 << "% чернил\n";
+	}
+	else if (pen1 < pen2) {
+		cout << pen1 << "% чернил" << " имеет меньше чем " << pen2 << "% чернил\n";
+	}
+	else if (pen1 == pen2) {
+		cout << pen1 << "% чернил" << " и " << pen2 << "% чернил" << " имеют одинаковых чернил\n";
+	}
+	else if (pen1 != pen2) {
+		cout << pen1 << "% чернил" << " и " << pen2 << "% чернил" << " не имеют одинаковых чернил\n";
+	}
 
 	pen.Write();
 	pen.ChangeAmpoule();
@@ -137,7 +197,8 @@ int main() {
 
 	Book book;
 	Book book1("1984", "Джордж Оруэлл", 328, "Антиутопия", 1949);
-	Book book2("1984");
+	Book book2("Унесенные ветром", "Маргарет Митчелл", 1037, "Роман", 1936);
+	Book book3("1984");
 
 	Book other_book;
 	other_book.SetTitle("1984");
@@ -149,11 +210,24 @@ int main() {
 	copy_book.Result();
 
 	cout << Book::GetCount() << "\n";
-	Book book3;
-	cout << Book::GetCount() << "\n";
 	Book book4;
 	cout << Book::GetCount() << "\n";
 	Book book5;
+	cout << Book::GetCount() << "\n";
+	Book book6;
+
+	if (book1 > book2) {
+		cout << book1 << " страниц" << " имеет больше страниц чем " << book2 << " страниц\n";
+	}
+	else if (book1 < book2) {
+		cout << book1 << " страниц" << " имеет меньше страниц чем " << book2 << " страниц\n";
+	}
+	else if (book1 == book2) {
+		cout << book1 << " страниц" << " и " << book2 << " страниц" << " имеют одинаковых страниц\n";
+	}
+	else if (book1 != book2) {
+		cout << book1 << " страниц" << " и " << book2 << " страниц" << " не имеют одинаковых страниц\n";
+	}
 
 	book.Open();
 	book.Close();

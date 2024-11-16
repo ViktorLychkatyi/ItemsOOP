@@ -30,8 +30,9 @@ double Kettle::GetPower() const {
 }
 
 void Kettle::SetBodyMaterial(const char* m) {
-	this->body_material = new char[100];
-	strcpy_s(this->body_material, 99, body_material);
+	delete[] this->body_material;
+	this->body_material = new char[strlen(m) + 1];
+	strcpy_s(this->body_material, strlen(m) + 1, m);
 }
 
 const char* Kettle::GetBodyMaterial() const {
@@ -88,6 +89,29 @@ Kettle::Kettle(const double c, const double p, const char* m, const string k, co
 	kettle_count++;
 }
 
+Kettle::Kettle(const string color) {
+	this->body_material = nullptr; // Обязательно инициализируем указатель
+	this->color = color;
+	cout << "Конструктор преобразования вызван" << "\n";
+	cout << this->color << "\n\n";
+	kettle_count++;
+}
+
+Kettle::Kettle(const Kettle& other_kettle) {
+	cout << "Конструктор копирования вызван" << "\n\n";
+	SetCapacity(other_kettle.capacity);
+	SetPower(other_kettle.power);
+	SetBodyMaterial(other_kettle.body_material);
+	SetColor(other_kettle.color);
+	SetWaterTemperature(other_kettle.water_temperature);
+	kettle_count++;
+}
+
+Kettle::~Kettle() {
+	delete[] this->body_material;
+	kettle_count--;
+}
+
 void Kettle::Result() const {
 	cout << this->capacity << "\n";
 	cout << this->power << "\n";
@@ -97,22 +121,46 @@ void Kettle::Result() const {
 	cout << "\n";
 }
 
-Kettle::Kettle(Kettle& original) {
-	cout << "Создан конструктор копирования\n\n";
-	SetBodyMaterial(original.body_material);
-}
-
-Kettle::~Kettle() {
-	cout << "Деструктор вызван\n\n";
-	delete[] this->body_material;
-	kettle_count--;
-}
-
 int Kettle::GetCount() {
 	return kettle_count;
 }
 
 int Kettle::kettle_count = 0;
+
+Kettle::Kettle(double c) {
+	SetCapacity(c);
+	kettle_count++;
+}
+
+Kettle Kettle::operator + (const Kettle& other_kettle) const {
+	return Kettle(capacity + other_kettle.capacity);
+}
+
+bool Kettle::operator > (const Kettle& other_kettle) const {
+	return this->capacity > other_kettle.capacity;
+}
+
+bool Kettle::operator < (const Kettle& other_kettle) const {
+	return this->capacity < other_kettle.capacity;
+}
+
+bool Kettle::operator == (const Kettle& other_kettle) const {
+	return this->capacity == other_kettle.capacity;
+}
+
+bool Kettle::operator != (const Kettle& other_kettle) const {
+	return this->capacity != other_kettle.capacity;
+}
+
+const ostream& operator << (ostream& i, const Kettle& kettle) {
+	i << kettle.capacity;
+	return i;
+}
+
+const istream& operator >> (istream& o, const Kettle& kettle) {
+	o >> kettle.capacity;
+	return o;
+}
 
 void Kettle::TurnOn() {
 	cout << "Включаем чайник\n";

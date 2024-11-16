@@ -32,7 +32,7 @@ public:
 	Phone(); // конструктор без параметров
 	Phone(const char* brand, const string m, const int s, const string c, const string o, const string p); // конструктор с параметрами
 	void Print() const; // вывод
-	Phone(const string m); // конструктор преобразования
+	Phone(const string model); // конструктор преобразования
 	void Display() const; // вывод
 	~Phone(); // делигирование
 	Phone(const Phone& other_phone); // конструктор копирования
@@ -46,7 +46,7 @@ public:
 	bool operator == (const Phone& other_phone) const;
 	bool operator != (const Phone& other_phone) const;
 	friend const ostream& operator << (ostream& i, const Phone& phone);
-	friend const istream& operator >> (istream& i, Phone& phone);
+	friend const istream& operator >> (istream& i, const Phone& phone);
 
 	void Call();
 	void SendMessage();

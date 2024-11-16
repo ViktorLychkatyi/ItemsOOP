@@ -30,9 +30,18 @@ public:
 	void Print(); // вывод
 	Book(const string title); // конструктор преобразования
 	~Book(); // делигирование
-	Book(Book& other_book); // конструктор копирования
+	Book(const Book& other_book); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
+	Book(int n);
+
+	Book operator + (const Book& other_book) const;
+	bool operator > (const Book& other_book) const;
+	bool operator < (const Book& other_book) const;
+	bool operator == (const Book& other_book) const;
+	bool operator != (const Book& other_book) const;
+	friend const ostream& operator << (ostream& i, const Book& book);
+	friend const istream& operator >> (istream& o, const Book& book);
 
 	void Open();
 	void Close();
