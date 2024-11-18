@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <windows.h>
 using namespace std;
 #include "Book.h"
@@ -135,14 +136,41 @@ bool Book::operator != (const Book& other_book) const {
     return this->number_pages != other_book.number_pages;
 }
 
-const ostream& operator << (ostream& i, const Book& book) {
-    i << book.number_pages;
+ostream& operator << (ostream& i, Book& other_book) {
+    i << other_book.number_pages << " USD";
     return i;
 }
 
-const istream& operator >> (istream& o, const Book& book) {
-    o >> book.number_pages;
-    return o;
+istream& operator >> (istream& i, Book& other_book) {
+    cin >> other_book.number_pages;
+    cout << other_book.number_pages << " USD";
+    return i;
+}
+
+Book& Book::operator = (const Book& other_book) {
+    if (this == &other_book) {
+        return *this;
+    }
+
+    delete[] title;
+
+    title = new char[strlen(other_book.title) + 1];
+    strcpy_s(title, strlen(other_book.title) + 1, other_book.title);
+    author = other_book.author;
+    number_pages = other_book.number_pages;
+    genre = other_book.genre;
+    year_publication = other_book.year_publication;
+
+    return *this;
+}
+
+Book::operator string() const {
+    return
+    "\nЦвет чернил: " + string(title) +
+    "\nТолщина ручки: " + author +
+    "\nДлина ручки: " + to_string(number_pages) +
+    "\nМатериал	: " + genre +
+    "\nКоличество чернил: " + to_string(year_publication) + "\n";
 }
 
 void Book::Open() {

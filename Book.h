@@ -33,15 +33,17 @@ public:
 	Book(const Book& other_book); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
-	Book(int n);
+	Book(int n); // для перегрузки
 
 	Book operator + (const Book& other_book) const;
 	bool operator > (const Book& other_book) const;
 	bool operator < (const Book& other_book) const;
 	bool operator == (const Book& other_book) const;
 	bool operator != (const Book& other_book) const;
-	friend const ostream& operator << (ostream& i, const Book& book);
-	friend const istream& operator >> (istream& o, const Book& book);
+	friend ostream& operator << (ostream& i, Book& other_book);
+	friend istream& operator >> (istream& i, Book& other_book);
+	Book& operator = (const Book& other_book);
+	explicit operator string() const;
 
 	void Open();
 	void Close();

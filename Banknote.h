@@ -34,15 +34,17 @@ public:
 	Banknote(const Banknote& other_banknote); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
-	Banknote(int n);
+	Banknote(int n); // для перегрузки
 
 	Banknote operator + (const Banknote& other_banknote) const;
 	bool operator > (const Banknote& other_banknote) const;
 	bool operator < (const Banknote& other_banknote) const;
 	bool operator == (const Banknote& other_banknote) const;
 	bool operator != (const Banknote& other_banknote) const;
-	friend const ostream& operator << (ostream& i, const Banknote& banknote);
-	friend const istream& operator >> (istream& i, const Banknote& banknote);
+	friend ostream& operator << (ostream& i, Banknote& other_banknote);
+	friend istream& operator >> (istream& i, Banknote& other_banknote);
+	Banknote& operator = (const Banknote& other_banknote);
+	explicit operator string() const;
 
 	void Exchange();
 	void State();

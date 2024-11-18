@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <windows.h>
 using namespace std;
 #include "Pen.h"
@@ -149,14 +150,41 @@ bool Pen::operator != (const Pen& other_pen) const {
 	return this->ink_amount != other_pen.ink_amount;
 }
 
-const ostream& operator << (ostream& i, const Pen& pen) {
-	i << pen.ink_amount;
+ostream& operator << (ostream& i, Pen& other_pen) {
+	i << other_pen.ink_amount << "%";
 	return i;
 }
 
-const istream& operator >> (istream& o, const Pen& pen) {
-	o >> pen.ink_amount;
-	return o;
+istream& operator >> (istream& i, Pen& other_pen) {
+	cin >> other_pen.ink_amount;
+	cout << other_pen.ink_amount << "%";
+	return i;
+}
+
+Pen& Pen::operator = (const Pen& other_pen) {
+	if (this == &other_pen) {
+		return *this;
+	}
+
+	delete[] ink_color;
+
+	ink_color = new char[strlen(other_pen.ink_color) + 1];
+	strcpy_s(ink_color, strlen(other_pen.ink_color) + 1, other_pen.ink_color);
+	pen_thickness = other_pen.pen_thickness;
+	pen_length = other_pen.pen_length;
+	body_material = other_pen.body_material;
+	ink_amount = other_pen.ink_amount;
+
+	return *this;
+}
+
+Pen::operator string() const {
+	return
+	"\nЦвет чернил: " + string(ink_color) +
+	"\nТолщина ручки: " + to_string(pen_thickness) +
+	"\nДлина ручки: " + to_string(pen_length) +
+	"\nМатериал	: " + body_material +
+	"\nКоличество чернил: " + to_string(ink_amount) + "\n";
 }
 
 void Pen::Write() {

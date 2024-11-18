@@ -38,15 +38,17 @@ public:
 	Phone(const Phone& other_phone); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
-	Phone(int s); // для перегрузки операции...
+	Phone(int s); // для перегрузки
 
 	Phone operator + (const Phone& other_phone) const;
 	bool operator > (const Phone& other_phone) const;
 	bool operator < (const Phone& other_phone) const;
 	bool operator == (const Phone& other_phone) const;
 	bool operator != (const Phone& other_phone) const;
-	friend const ostream& operator << (ostream& i, const Phone& phone);
-	friend const istream& operator >> (istream& i, const Phone& phone);
+	friend ostream& operator << (ostream& i,  Phone& other_phone);
+	friend istream& operator >> (istream& i,  Phone& other_phone);
+	Phone& operator = (const Phone& other_phone);
+	explicit operator string() const;
 
 	void Call();
 	void SendMessage();

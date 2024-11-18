@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <windows.h>
 using namespace std;
 #include "Banknote.h"
@@ -171,14 +172,43 @@ bool Banknote::operator != (const Banknote& other_banknote) const {
 	return this->number != other_banknote.number;
 }
 
-const ostream& operator << (ostream& i, const Banknote& banknote) {
-	i << banknote.number;
+ostream& operator << (ostream& i, Banknote& other_banknote) {
+	i << other_banknote.number << " USD";
 	return i;
 }
 
-const istream& operator >> (istream& o, const Banknote& banknote) {
-	o >> banknote.number;
-	return o;
+istream& operator >> (istream& i, Banknote& other_banknote) {
+	cin >> other_banknote.number;
+	cout << other_banknote.number << " USD";
+	return i;
+}
+
+Banknote& Banknote::operator = (const Banknote& other_banknote) {
+	if (this == &other_banknote) {
+		return *this;
+	}
+
+	delete[] denomination;
+
+	denomination = new char[strlen(other_banknote.denomination) + 1];
+	strcpy_s(denomination, strlen(other_banknote.denomination) + 1, other_banknote.denomination);
+	number = other_banknote.number;
+	currency = other_banknote.currency;
+	serial_number = other_banknote.serial_number;
+	country = other_banknote.country;
+	state = other_banknote.state;
+
+	return *this;
+}
+
+Banknote::operator string() const {
+	return
+	"\nНоминация: " + string(denomination) +
+	"\nЧисло: " + to_string(number) +
+	"\nВалюта: " + currency +
+	"\nСерийный номер: " + serial_number +
+	"\nСтрана: " + country +
+	"\nСостояние: " + state + "\n";
 }
 
 void Banknote::Exchange() {

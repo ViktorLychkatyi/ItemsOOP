@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <windows.h>
 using namespace std;
 #include "Phone.h"
@@ -91,10 +92,6 @@ Phone::Phone(const string model) {
 	phone_count++;
 }
 
-void Phone::Display() const {
-	cout << "Память: " << memory_size << " GB\n\n";
-}
-
 Phone::Phone(const Phone& other_phone) {
 	cout << "Конструктор копирования вызван" << "\n\n";
 	SetBrand(other_phone.brand);
@@ -151,15 +148,43 @@ bool Phone::operator == (const Phone& other_phone) const {
 bool Phone::operator != (const Phone& other_phone) const {
 	return this->memory_size != other_phone.memory_size;
 }
-
-const ostream& operator << (ostream& i, const Phone& phone) {
-	i << phone.memory_size;
+ostream& operator << (ostream& i, Phone& other_phone) {
+	i << other_phone.memory_size << " ГБ";
 	return i;
 }
 
-const istream& operator >> (istream& o, const Phone& phone) {
-	o >> phone.memory_size;
-	return o;
+istream& operator >> (istream& i, Phone& other_phone) {
+	cin >> other_phone.memory_size;
+	cout << other_phone.memory_size << " ГБ";
+	return i;
+}
+
+Phone& Phone::operator = (const Phone& other_phone) {
+	if(this == &other_phone) {
+		return *this;
+	}
+
+	delete[] brand;
+
+	brand = new char[strlen(other_phone.brand) + 1];
+	strcpy_s(brand, strlen(other_phone.brand) + 1, other_phone.brand);
+	model = other_phone.model;
+	memory_size = other_phone.memory_size;
+	color = other_phone.color;
+	operating_system = other_phone.operating_system;
+	proccesor = other_phone.proccesor;
+
+	return *this;
+}
+
+Phone::operator string() const {
+	return 
+	"\nБренд: " + string(brand) +
+	"\nМодель: " + model +
+	"\nПамять: " + to_string(memory_size) + " GB" +
+	"\nЦвет: " + color +
+	"\nОперационная система: " + operating_system +
+	"\nПроцессор: " + proccesor + "\n";
 }
 
 void Phone::Call() {

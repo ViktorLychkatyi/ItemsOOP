@@ -1,4 +1,5 @@
 ﻿#include <iostream>
+#include <string>
 #include <windows.h>
 using namespace std;
 #include "Kettle.h"
@@ -152,14 +153,41 @@ bool Kettle::operator != (const Kettle& other_kettle) const {
 	return this->capacity != other_kettle.capacity;
 }
 
-const ostream& operator << (ostream& i, const Kettle& kettle) {
-	i << kettle.capacity;
+ostream& operator << (ostream& i, Kettle& other_kettle) {
+	i << other_kettle.capacity << " стр.";
 	return i;
 }
 
-const istream& operator >> (istream& o, const Kettle& kettle) {
-	o >> kettle.capacity;
-	return o;
+istream& operator >> (istream& i, Kettle& other_kettle) {
+	cin >> other_kettle.capacity;
+	cout << other_kettle.capacity << " стр.";
+	return i;
+}
+
+Kettle& Kettle::operator = (const Kettle& other_kettle) {
+	if (this == &other_kettle) {
+		return *this;
+	}
+
+	delete[] body_material;
+
+	capacity = other_kettle.capacity;
+	power = other_kettle.power;
+	body_material = new char[strlen(other_kettle.body_material) + 1];
+	strcpy_s(body_material, strlen(other_kettle.body_material) + 1, other_kettle.body_material);
+	color = other_kettle.color;
+	water_temperature = other_kettle.water_temperature;
+
+	return *this;
+}
+
+Kettle::operator string() const {
+	return
+	"\nОбъем: " + to_string(capacity) +
+	"\nМощность: " + to_string(power) +
+	"\nМатериал: " + string(body_material) +
+	"\nЦвет: " + color +
+	"\nТемпература воды: " + to_string(water_temperature) + "\n";
 }
 
 void Kettle::TurnOn() {

@@ -30,15 +30,17 @@ public:
 	Pen(const Pen& other_pen); // конструктор копирования
 	static int GetCount(); // подсчет кол. объектов
 	void Result() const; // вывод для копирования конструктура
-	Pen(int a);
+	Pen(int a); // для перегрузки
 
 	Pen operator + (const Pen& other_pen) const;
 	bool operator > (const Pen& other_pen) const;
 	bool operator < (const Pen& other_pen) const;
 	bool operator == (const Pen& other_pen) const;
 	bool operator != (const Pen& other_pen) const;
-	friend const ostream& operator << (ostream& i, const Pen& pen);
-	friend const istream& operator >> (istream& i, const Pen& pen);
+	friend ostream& operator << (ostream& i, Pen& other_pen);
+	friend istream& operator >> (istream& i, Pen& other_pen);
+	Pen& operator = (const Pen& other_banknote);
+	explicit operator string() const;
 
 	void Write();
 	void ChangeAmpoule();
